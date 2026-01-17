@@ -1,0 +1,8 @@
+{
+  "name": "BIGS Support Services - Corporate Security",
+  "description": "A high-performance, professional corporate landing page for BIGS Support Services Pvt. Ltd., specializing in security and facility management solutions.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
