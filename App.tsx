@@ -1,39 +1,20 @@
 
-import React, { useState, useEffect } from 'react';
-import { 
-  Shield, 
-  Users, 
-  Building2, 
-  Cctv, 
-  Truck, 
-  ChevronRight, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Search, 
-  Menu, 
-  X,
-  Award,
-  Calendar,
-  Zap,
-  Microscope,
-  Briefcase
-} from 'lucide-react';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Stats } from './components/Stats';
-import { Services } from './components/Services';
-import { Industries } from './components/Industries';
-import { TechInnovation } from './components/TechInnovation';
-import { Training } from './components/Training';
-import { Leadership } from './components/Leadership';
-import { Milestones } from './components/Milestones';
-import { News } from './components/News';
-import { CareersCTA } from './components/CareersCTA';
-import { ClientLogos } from './components/Clients';
-import { ContactCTA } from './components/ContactCTA';
-import { Footer } from './components/Footer';
+import React from 'react';
+import { Header } from './components/Header.tsx';
+import { Hero } from './components/Hero.tsx';
+import { About } from './components/About.tsx';
+import { Stats } from './components/Stats.tsx';
+import { Services } from './components/Services.tsx';
+import { Industries } from './components/Industries.tsx';
+import { TechInnovation } from './components/TechInnovation.tsx';
+import { Training } from './components/Training.tsx';
+import { Leadership } from './components/Leadership.tsx';
+import { Milestones } from './components/Milestones.tsx';
+import { News } from './components/News.tsx';
+import { CareersCTA } from './components/CareersCTA.tsx';
+import { ClientLogos } from './components/Clients.tsx';
+import { ContactCTA } from './components/ContactCTA.tsx';
+import { Footer } from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (
