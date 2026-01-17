@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-10000 scale-105"
-        style={{ backgroundImage: `url('https://picsum.photos/seed/security1/1920/1080')` }}
+        style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7kNvwElTFxd&_nc_oc=Adlp6YtjKjtXDOWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }}
       />
       <div className="absolute inset-0 hero-overlay" />
 

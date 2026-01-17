@@ -23,7 +23,7 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-24">
       <section className="relative py-24 bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://picsum.photos/seed/gallery-bg/1920/600')` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7YWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">Operations Gallery</h1>
           <div className="flex items-center justify-center gap-2 text-slate-300 font-medium">
