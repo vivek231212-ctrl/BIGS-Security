@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ShieldCheck, Target, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,7 @@ export const About: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-slate-50">
-              <img src="https://picsum.photos/seed/about/800/800" alt="About BIGS" className="w-full h-full object-cover" />
+              <img src="https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m421/AQNKl6KWFqpNqKN8aKf9sgtgWbUvMLes9sz851cOfObSCzWIJNVXmaMCprrfHNB9tO7NXjV01_ij-tf0V6iHB7wFyUYwW_Djl980Nr7hp2oQzg_4e6a8un9NO2sMfdQW45kwzWJuJNP0_bG4u1sykChAyT2d.jpeg?stp=s600x337&_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=zMGZlZaotLrA0G4Z20-z9w&_nc_cat=104&_nc_oc=Adkwg608n8giViMrSkMLOk9xcCIXN_hKmvBN7zzPNDIaI_yFydiJXUWwkTt387T-y9s_pFqKhpgYyf6bPETUme40&ccb=9-4&oh=00_AfqWTJKhFqY_q28jqxlYW5AQsFw_IsnB9sX_y4cgLGcLYQ&oe=696D60D7&_nc_sid=5b3566" alt="About BIGS" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-10 -right-10 bg-white p-12 rounded-[32px] shadow-2xl border border-slate-100 max-w-[280px]">
               <div className="text-6xl font-black text-[#e63946] mb-2">25+</div>

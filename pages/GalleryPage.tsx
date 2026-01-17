@@ -1,15 +1,14 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const categories = ['All', 'Operations', 'Training', 'Events', 'Awards'];
 
 const galleryItems = [
-  { id: 1, cat: 'Operations', img: 'https://picsum.photos/seed/gal1/800/600', title: 'Industrial Guarding' },
-  { id: 2, cat: 'Training', img: 'https://picsum.photos/seed/gal2/600/800', title: 'Defensive Drills' },
-  { id: 3, cat: 'Events', img: 'https://picsum.photos/seed/gal3/800/800', title: 'Corporate Summit' },
-  { id: 4, cat: 'Awards', img: 'https://picsum.photos/seed/gal4/800/600', title: 'Best Partner 2024' },
-  { id: 5, cat: 'Operations', img: 'https://picsum.photos/seed/gal5/800/800', title: 'Mobile Patrol' },
-  { id: 6, cat: 'Training', img: 'https://picsum.photos/seed/gal6/800/600', title: 'Fire Safety Training' },
+  { id: 1, cat: 'Operations', img: 'https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m340/AQNES8Jzbl8FVSTzyUNvW06wq3IovY2FmpmXEREtXg7cYFU7c0RbayfcFnrXyDubcnTd4WXFUET7z12cFRFgK9R0WKCqAr6fz461uul3NPQGneRMzRH6rwFCCH0FvTPWqAD7F56RkP3dSQSWBS7KTVuwoZlT5g.jpeg?_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=_mWePih3sRlTuOtdfVRvXA&_nc_cat=111&_nc_oc=AdmZV33x7IYuSi6JiZjHOMA34RZ7ed1giXLFIBD3C2iR7vM6vD-8i7dd5RBPtPitCKV6-wBt_fWCve3H_7SUcEcL&ccb=9-4&oh=00_AfoPr6NBpolTb27hfVlbPY5sCUI1iForgME4TRD8uKbLyA&oe=696D6776&_nc_sid=5b3566', title: 'Industrial Guarding' },
+  { id: 2, cat: 'Training', img: 'https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m340/AQNPQ6zGdT-Xsh22JLtg9uXEGW6ifJ-XEyj6a9Az5iFY5eslxMFLsc81MtKbzGMUQdIRKbATg8_6DDMQG9_sFOniwyIb-B2FwctsbOTGqlcxXB2GjUwKu0OIyzYA2UyAoaSRcJtlyrC36-rv55xlsrERrjn5gw.jpeg?_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=_mWePih3sRlTuOtdfVRvXA&_nc_cat=107&_nc_oc=AdkyIQh5whkLKEzOWvzcJybZ5lVohmaGNqpehl2Q_VObhdkhhY4BWVRe6pxFMgvepyfzpEyWwGYic3ognv9MgZeV&ccb=9-4&oh=00_Afr1k4MH4oqI8mKvfmTgxDPLOwy1XelfzOLNAFdJqk_nIA&oe=696D74E2&_nc_sid=5b3566', title: 'Defensive Drills' },
+  { id: 3, cat: 'Events', img: 'https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m340/AQPZsZyv8hW8iA6x2oub_tYSLGimXq63xYIfeq3u6cVWcAFkkqB2rkvMBvUXFk0BeQrwfMmJgITsFYkOV0Ji-Xwo7iHRdHQe4ofuHIlwYju0Nu3835oEkgIFTG-uZ4ljpSIzz1KTRYsUJB_jxvtBROSp1cWE7Q.jpeg?_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=_mWePih3sRlTuOtdfVRvXA&_nc_cat=109&_nc_oc=AdmnuyiFYJ4p-HhUMbMrUtmFKm_HKbTlc5IL1pnLlo5d2KMMMbb9Cud5c1q2HjuxIiq_WCEm8FkTgLnOXQojrN4y&ccb=9-4&oh=00_AfoqC3zyGItJuFXS8fXeEhUW63-ZHfGVVNIqxruXFSy_7g&oe=696D6CEC&_nc_sid=5b3566', title: 'Corporate Summit' },
+  { id: 4, cat: 'Awards', img: 'https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m421/AQML7EW-7MKTAo64I-PueLkP0A6Vq9aZV-7UAXplKMrOR_8Kv-ix1UxWyx3pix4CE81yDBx0bEDxtdCULlMLXv0EjB1hj6F4OhD7f2_906RIV7c5sqCI_Ue-Eqb8z-g_Wfs0xf3u0T5NaJ0wYk28nV2JHUZ_Rg.jpeg?stp=s600x337&_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=zMGZlZaotLrA0G4Z20-z9w&_nc_cat=109&_nc_oc=AdmHc7R1R4CwMoCMkClbYxe8nFHR3kWg67tvwzyZPLIJAEUcFi41aMEJak6dAGqjwUgIzjttVMr895ycDk2wBg3y&ccb=9-4&oh=00_Afrwh_V-m9dXz3VNcjCWDk2jL3F8SBlcD9wU1kbF9M0DKg&oe=696D5D84&_nc_sid=5b3566', title: 'Best Partner 2024' },
 ];
 
 export const GalleryPage: React.FC = () => {
@@ -22,7 +21,7 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-24">
       <section className="relative py-[25px] bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7YWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m340/AQNES8Jzbl8FVSTzyUNvW06wq3IovY2FmpmXEREtXg7cYFU7c0RbayfcFnrXyDubcnTd4WXFUET7z12cFRFgK9R0WKCqAr6fz461uul3NPQGneRMzRH6rwFCCH0FvTPWqAD7F56RkP3dSQSWBS7KTVuwoZlT5g.jpeg?_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=_mWePih3sRlTuOtdfVRvXA&_nc_cat=111&_nc_oc=AdmZV33x7IYuSi6JiZjHOMA34RZ7ed1giXLFIBD3C2iR7vM6vD-8i7dd5RBPtPitCKV6-wBt_fWCve3H_7SUcEcL&ccb=9-4&oh=00_AfoPr6NBpolTb27hfVlbPY5sCUI1iForgME4TRD8uKbLyA&oe=696D6776&_nc_sid=5b3566')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">Operations Gallery</h1>
           <div className="flex items-center justify-center gap-2 text-slate-300 font-medium">

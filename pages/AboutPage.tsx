@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Eye, Shield, Award, Users, MapPin, CheckCircle } from 'lucide-react';
@@ -8,7 +9,7 @@ export const AboutPage: React.FC = () => {
     <div className="pt-24">
       {/* Hero Banner */}
       <section className="relative py-[25px] bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7kNvwElTFxd&_nc_oc=Adlp6YtjKjtXDOWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m421/AQP0ROyxzy-Wol3hJbnb_GiwdHqO1MAMyilYNxpVhSZUZGsHa3y5n2wKdqClmj6AunWN8uu9x7wm-phFwtnSCDr6z4NS5IjvAahR9ZSKaGkTfujAh74z5VXuwPuVZe8KVNpr0JgiWyp0SfAgCTGFMxlYSE-hpQ.jpeg?stp=s600x337&_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=zMGZlZaotLrA0G4Z20-z9w&_nc_cat=102&_nc_oc=AdnVifxNCZgM8FaJsCcRmcSkG2ru3pMasRbvYff39-5Si4h9ju6Rm96zb7qXz-9CJyYXVa-ElvOfWDZBBVz1Q06v&ccb=9-4&oh=00_AfpbiyTOzVVTxP4Ft3uDy1GyV9UvvN91XRU71O7jKiHvfw&oe=696D6F85&_nc_sid=5b3566')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">About Us</h1>
           <div className="flex items-center justify-center gap-2 text-slate-300 font-medium">
@@ -52,7 +53,7 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
             <div className="relative">
-              <img src="https://picsum.photos/seed/about-team/800/800" alt="Team" className="rounded-2xl shadow-2xl" />
+              <img src="https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m421/AQNKl6KWFqpNqKN8aKf9sgtgWbUvMLes9sz851cOfObSCzWIJNVXmaMCprrfHNB9tO7NXjV01_ij-tf0V6iHB7wFyUYwW_Djl980Nr7hp2oQzg_4e6a8un9NO2sMfdQW45kwzWJuJNP0_bG4u1sykChAyT2d.jpeg?stp=s600x337&_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=zMGZlZaotLrA0G4Z20-z9w&_nc_cat=104&_nc_oc=Adkwg608n8giViMrSkMLOk9xcCIXN_hKmvBN7zzPNDIaI_yFydiJXUWwkTt387T-y9s_pFqKhpgYyf6bPETUme40&ccb=9-4&oh=00_AfqWTJKhFqY_q28jqxlYW5AQsFw_IsnB9sX_y4cgLGcLYQ&oe=696D60D7&_nc_sid=5b3566" alt="Team" className="rounded-2xl shadow-2xl" />
               <div className="absolute -bottom-10 -left-10 bg-[#e63946] p-10 rounded-2xl hidden md:block">
                 <Shield className="text-white w-12 h-12 mb-4" />
                 <p className="text-white text-3xl font-bold">25+ Years</p>
