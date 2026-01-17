@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Play } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -28,14 +29,14 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom duration-1000">
-            <button className="bg-[#e63946] text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-[#c32f3a] transition-all group">
+            <Link to="/about" className="bg-[#e63946] text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-[#c32f3a] transition-all group">
               Explore Our Services
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
+            </Link>
+            <Link to="/gallery" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
               <Play className="w-5 h-5 fill-white" />
               Watch Video
-            </button>
+            </Link>
           </div>
         </div>
       </div>
