@@ -16,6 +16,11 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu on navigation
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
@@ -37,20 +42,19 @@ export const Header: React.FC = () => {
   ];
 
   const isHome = location.pathname === '/';
-  // With white theme, we want header white unless it's hero-transparent-home
   const headerBgClass = (isScrolled || !isHome) ? 'bg-white shadow-sm py-2' : 'bg-transparent py-4';
   const headerTextClass = (isScrolled || !isHome) ? 'text-black' : 'text-white';
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          <div className="bg-[#e63946] p-2 rounded-lg shadow-lg shadow-red-500/20">
-            <Shield className="text-white w-6 h-6" />
+          <div className="bg-[#e63946] p-1.5 sm:p-2 rounded-lg shadow-lg shadow-red-500/20">
+            <Shield className="text-white w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <div>
-            <h1 className={`font-black text-xl leading-none ${headerTextClass}`}>BIGS</h1>
-            <p className={`text-[10px] font-bold tracking-widest ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
+            <h1 className={`font-black text-lg sm:text-xl leading-none ${headerTextClass}`}>BIGS</h1>
+            <p className={`text-[8px] sm:text-[10px] font-bold tracking-widest ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
           </div>
         </Link>
 
@@ -99,37 +103,44 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X className={headerTextClass} /> : <Menu className={headerTextClass} />}
+        <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
+          {isMenuOpen ? <X className={headerTextClass} size={28} /> : <Menu className={headerTextClass} size={28} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl py-8 flex flex-col items-start px-10 gap-6 border-t border-slate-100 animate-in slide-in-from-top">
-          {navLinks.map((link) => (
-            <Link key={link.name} to={link.href} onClick={() => setIsMenuOpen(false)} className="text-black font-black text-lg uppercase w-full hover:text-[#e63946]">
-              {link.name}
-            </Link>
-          ))}
-          <div className="w-full">
-            <p className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] mb-4">Our Services</p>
-            {serviceLinks.map((link) => (
-              <Link key={link.name} to={link.href} onClick={() => setIsMenuOpen(false)} className="block py-2 text-black font-bold ml-4 hover:text-[#e63946]">
+      {/* Mobile Nav Overlay */}
+      <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-8">
+          <div className="flex flex-col gap-6">
+            {navLinks.map((link) => (
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-2 hover:text-[#e63946]">
                 {link.name}
               </Link>
             ))}
-          </div>
-          {otherLinks.map((link) => (
-            <Link key={link.name} to={link.href} onClick={() => setIsMenuOpen(false)} className="text-black font-black text-lg uppercase w-full hover:text-[#e63946]">
-              {link.name}
+            
+            <div className="py-2">
+              <p className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] mb-4">Our Services</p>
+              <div className="grid grid-cols-1 gap-3 ml-4">
+                {serviceLinks.map((link) => (
+                  <Link key={link.name} to={link.href} className="text-black font-bold text-lg hover:text-[#e63946]">
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {otherLinks.map((link) => (
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-2 hover:text-[#e63946]">
+                {link.name}
+              </Link>
+            ))}
+            
+            <Link to="/get-quote" className="bg-[#e63946] text-white w-full py-5 mt-4 rounded-2xl font-black text-center uppercase tracking-widest shadow-xl">
+              Get Quote
             </Link>
-          ))}
-          <Link to="/get-quote" onClick={() => setIsMenuOpen(false)} className="bg-[#e63946] text-white w-full py-5 rounded-2xl font-black text-center uppercase tracking-widest">
-            Get Quote
-          </Link>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
