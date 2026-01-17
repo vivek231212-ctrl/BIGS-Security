@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Shield, Send, CheckCircle } from 'lucide-react';
 
 export const QuotePage: React.FC = () => {
   return (
     <div className="pt-24 bg-slate-50 min-h-screen pb-24">
-      <section className="py-[7.5px] bg-[#0a1d37] text-white">
+      <section className="py-[25px] bg-[#0a1d37] text-white">
         <div className="container mx-auto px-6 text-center">
           <Shield className="w-16 h-16 text-[#e63946] mx-auto mb-6" />
           <h1 className="text-5xl font-extrabold mb-6">Get a Custom Quote</h1>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Headset, Share2 } from 'lucide-react';
@@ -7,7 +6,7 @@ import { ContactCTA } from '../components/ContactCTA.tsx';
 export const ContactPage: React.FC = () => {
   return (
     <div className="pt-24">
-      <section className="relative py-[7.5px] bg-slate-900 overflow-hidden">
+      <section className="relative py-[25px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7YWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">Contact Us</h1>
@@ -17,7 +16,7 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-[7.5px] bg-white">
+      <section className="py-[25px] bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-10">
             <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">

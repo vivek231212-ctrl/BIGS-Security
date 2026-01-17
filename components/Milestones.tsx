@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const milestones = [
@@ -11,7 +10,7 @@ const milestones = [
 
 export const Milestones: React.FC = () => {
   return (
-    <section className="py-[7.5px] bg-white text-black">
+    <section className="py-[25px] bg-white text-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-24">
           <span className="text-[#e63946] font-black tracking-[0.3em] uppercase text-xs mb-4 block">Our Journey</span>

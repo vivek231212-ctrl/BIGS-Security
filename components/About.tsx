@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { ShieldCheck, Target, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-[7.5px] bg-white">
+    <section id="about" className="py-[25px] bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">

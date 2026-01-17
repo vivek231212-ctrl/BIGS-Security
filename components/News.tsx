@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
 
@@ -25,7 +24,7 @@ const articles = [
 
 export const News: React.FC = () => {
   return (
-    <section className="py-[7.5px] bg-white">
+    <section className="py-[25px] bg-white">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
           <div>

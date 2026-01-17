@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 export const ContactCTA: React.FC = () => {
   return (
-    <section id="contact" className="py-[7.5px] bg-white">
+    <section id="contact" className="py-[25px] bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <div>

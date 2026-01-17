@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const ClientLogos: React.FC = () => {
@@ -6,7 +5,7 @@ export const ClientLogos: React.FC = () => {
   const clients = ['Google', 'Amazon', 'Tata', 'Reliance', 'ICICI Bank', 'HDFC', 'Wipro', 'Infosys', 'Adani', 'Mahindra'];
   
   return (
-    <section className="py-[7.5px] bg-slate-50 border-y border-slate-100 overflow-hidden">
+    <section className="py-[25px] bg-slate-50 border-y border-slate-100 overflow-hidden">
       <div className="container mx-auto px-6 mb-10 text-center">
         <span className="text-slate-400 font-bold tracking-widest uppercase text-xs">Trusted By Fortune 500 Companies</span>
       </div>

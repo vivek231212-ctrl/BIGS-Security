@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Microscope, Zap, Database, Smartphone } from 'lucide-react';
 
 export const TechInnovation: React.FC = () => {
   return (
-    <section id="tech" className="py-[7.5px] bg-white">
+    <section id="tech" className="py-[25px] bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">

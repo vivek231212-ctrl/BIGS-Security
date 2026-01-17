@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Shield, CheckCircle, ChevronRight, Zap, Award, Microscope, Users, BookOpen } from 'lucide-react';
@@ -88,7 +87,7 @@ export const ServicePage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-[7.5px] bg-white">
+      <section className="py-[25px] bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">

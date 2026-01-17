@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Eye, Shield, Award, Users, MapPin, CheckCircle } from 'lucide-react';
@@ -8,7 +7,7 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="pt-24">
       {/* Hero Banner */}
-      <section className="relative py-[7.5px] bg-slate-900 overflow-hidden">
+      <section className="relative py-[25px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7kNvwElTFxd&_nc_oc=Adlp6YtjKjtXDOWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">About Us</h1>
@@ -21,7 +20,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-[7.5px] bg-white">
+      <section className="py-[25px] bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -65,7 +64,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-[7.5px] bg-slate-50">
+      <section className="py-[25px] bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-100 transform hover:-translate-y-2 transition-all">
@@ -91,7 +90,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-[7.5px] bg-white">
+      <section className="py-[25px] bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">The BIGS Way</span>
@@ -117,7 +116,7 @@ export const AboutPage: React.FC = () => {
       <Leadership />
 
       {/* CTA */}
-      <section className="py-[7.5px] bg-[#0a1d37]">
+      <section className="py-[25px] bg-[#0a1d37]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold text-white mb-8">Partner with Excellence</h2>
           <Link to="/contact" className="inline-block bg-[#e63946] text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#c32f3a] transition-all">

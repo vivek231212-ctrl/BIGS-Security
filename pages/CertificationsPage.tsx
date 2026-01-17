@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, FileText, Globe, Lock } from 'lucide-react';
@@ -7,7 +6,7 @@ export const CertificationsPage: React.FC = () => {
   return (
     <div className="pt-24">
       {/* Hero Banner */}
-      <section className="relative py-[7.5px] bg-slate-900 overflow-hidden">
+      <section className="relative py-[25px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/v/t39.30808-6/614388964_921705314365677_8961878546008505667_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e1afaa&_nc_ohc=cWiVWoZCdHsQ7YWbod_fQyGG3oWSeZPSuRjXCam6B1nygyt4Z5tklBnFkxdzwCao5sdNO26XGtvsfx3cplrtab3k&_nc_zt=23&_nc_ht=scontent.fstv8-2.fna&_nc_gid=4a2GgXkafCbnMGOD8GRuEA&oh=00_AfpluZ5c4rScUVHEyzxOdZEAU0vCuqLBvij5dwn-7nDO9Q&oe=69713DB9')` }} />
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
           <h1 className="text-5xl font-extrabold mb-6">Compliance & Certifications</h1>
@@ -17,7 +16,7 @@ export const CertificationsPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-[7.5px] bg-white">
+      <section className="py-[25px] bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-20">
             <ShieldCheck className="w-16 h-16 text-[#e63946] mx-auto mb-6" />
@@ -47,7 +46,7 @@ export const CertificationsPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-[7.5px] bg-[#f8fafc]">
+      <section className="py-[25px] bg-[#f8fafc]">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-3xl font-extrabold text-[#0a1d37] mb-12">Regulatory Compliance Statement</h3>
           <div className="max-w-4xl mx-auto bg-white p-12 rounded-3xl shadow-xl border border-slate-200">

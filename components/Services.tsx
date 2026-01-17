@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Cctv, Truck, Building2, UserCheck, Search, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -14,7 +13,7 @@ const serviceData = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-[7.5px] bg-white">
+    <section id="services" className="py-[25px] bg-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-xl">
