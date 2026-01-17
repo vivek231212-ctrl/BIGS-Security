@@ -4,7 +4,7 @@ import { GraduationCap, BookOpen, Users2 } from 'lucide-react';
 
 export const Training: React.FC = () => {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-[7.5px] bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">Quality Workforce</span>

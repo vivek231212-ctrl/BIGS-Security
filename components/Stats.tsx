@@ -37,7 +37,7 @@ const StatCard = ({ icon: Icon, value, label, suffix }: any) => {
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-[7.5px] bg-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <StatCard icon={Users} value={45000} label="Security Pros" suffix="+" />

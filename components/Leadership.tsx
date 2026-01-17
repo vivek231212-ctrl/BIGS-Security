@@ -10,7 +10,7 @@ const leaders = [
 
 export const Leadership: React.FC = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-[7.5px] bg-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">

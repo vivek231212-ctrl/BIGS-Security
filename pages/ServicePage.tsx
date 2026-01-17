@@ -88,7 +88,7 @@ export const ServicePage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 bg-white">
+      <section className="py-[7.5px] bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">

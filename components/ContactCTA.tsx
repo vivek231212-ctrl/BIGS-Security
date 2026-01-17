@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 export const ContactCTA: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-[7.5px] bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
@@ -80,7 +80,7 @@ export const ContactCTA: React.FC = () => {
               
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Brief Message</label>
-                <textarea rows={4} className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-transparent transition-all" placeholder="Tell us about your requirements..."></textarea>
+                <textarea rows={4} className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-[#e63946] focus:border-transparent transition-all" placeholder="Tell us about your requirements..."></textarea>
               </div>
               
               <button className="w-full bg-[#0a1d37] text-white py-5 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#e63946] transition-all shadow-lg group">

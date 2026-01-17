@@ -12,7 +12,7 @@ const industries = [
 
 export const Industries: React.FC = () => {
   return (
-    <section id="industries" className="py-24 bg-white overflow-hidden">
+    <section id="industries" className="py-[7.5px] bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <span className="text-[#e63946] font-black tracking-[0.3em] uppercase text-xs mb-4 block">Market Segments</span>
