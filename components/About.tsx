@@ -1,55 +1,53 @@
 
 import React from 'react';
-import { Award, ShieldCheck, Target } from 'lucide-react';
+import { ShieldCheck, Target, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-slate-50">
+    <section id="about" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src="https://picsum.photos/seed/about/800/600" alt="About BIGS" className="w-full h-full object-cover" />
+            <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-slate-50">
+              <img src="https://picsum.photos/seed/about/800/800" alt="About BIGS" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-xl max-w-[240px]">
-              <div className="text-4xl font-extrabold text-[#e63946] mb-1">25+</div>
-              <div className="text-slate-600 font-bold uppercase tracking-wider text-sm">Years of Trust & Excellence</div>
+            <div className="absolute -bottom-10 -right-10 bg-white p-12 rounded-[32px] shadow-2xl border border-slate-100 max-w-[280px]">
+              <div className="text-6xl font-black text-[#e63946] mb-2">25+</div>
+              <div className="text-black font-black uppercase tracking-[0.2em] text-[10px] leading-tight">Years of Unmatched Security Excellence</div>
             </div>
           </div>
           
           <div>
-            <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">Our Legacy</span>
-            <h2 className="text-4xl font-extrabold text-[#0a1d37] mt-3 mb-6 leading-tight">
-              Pioneering Security & Facility <br />Solutions Since 1998
+            <div className="w-20 h-1 bg-[#e63946] mb-8"></div>
+            <span className="text-black font-black tracking-[0.3em] uppercase text-xs mb-4 block">Our Legacy</span>
+            <h2 className="text-5xl font-black text-black mt-3 mb-8 leading-[1.1]">
+              Pioneering Security <br />& Facility Solutions <br />Since 1998
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8">
-              At BIGS Support Services, we don't just provide security; we offer peace of mind. As a premier partner for India's leading corporations, we've spent over two decades refining our methodologies, integrating cutting-edge technology, and training a workforce that stands as a pillar of reliability.
+            <p className="text-black text-lg leading-relaxed mb-10 font-medium">
+              At BIGS Support Services, we don't just provide security; we offer peace of mind. As a premier partner for India's leading corporations, we've spent over two decades refining our methodologies and training a workforce that stands as a pillar of reliability.
             </p>
             
-            <div className="space-y-6 mb-10">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                  <ShieldCheck className="text-blue-600 w-6 h-6" />
+            <div className="grid sm:grid-cols-2 gap-8 mb-12">
+              <div className="group">
+                <div className="flex-shrink-0 bg-red-50 p-4 rounded-2xl mb-4 group-hover:bg-[#e63946] transition-colors">
+                  <ShieldCheck className="text-[#e63946] group-hover:text-white w-8 h-8" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#0a1d37] text-lg">Quality Guaranteed</h4>
-                  <p className="text-slate-500 text-sm">ISO certified processes ensuring high-standard service delivery across all sectors.</p>
-                </div>
+                <h4 className="font-black text-black text-lg mb-2 uppercase tracking-tight">Quality Guaranteed</h4>
+                <p className="text-black/60 text-sm font-bold">ISO certified processes ensuring high-standard delivery.</p>
               </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 bg-orange-50 p-3 rounded-lg">
-                  <Target className="text-orange-600 w-6 h-6" />
+              <div className="group">
+                <div className="flex-shrink-0 bg-red-50 p-4 rounded-2xl mb-4 group-hover:bg-[#e63946] transition-colors">
+                  <Target className="text-[#e63946] group-hover:text-white w-8 h-8" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#0a1d37] text-lg">Integrated Solutions</h4>
-                  <p className="text-slate-500 text-sm">One-stop-shop for manpower, technology, and facility management requirements.</p>
-                </div>
+                <h4 className="font-black text-black text-lg mb-2 uppercase tracking-tight">Integrated Model</h4>
+                <p className="text-black/60 text-sm font-bold">One-stop-shop for manpower and technology.</p>
               </div>
             </div>
             
-            <button className="border-2 border-[#0a1d37] text-[#0a1d37] px-8 py-3 rounded-lg font-bold hover:bg-[#0a1d37] hover:text-white transition-all">
-              Learn More About Us
-            </button>
+            <Link to="/about" className="inline-flex items-center gap-4 bg-black text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-[#e63946] transition-all group">
+              Learn More <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>

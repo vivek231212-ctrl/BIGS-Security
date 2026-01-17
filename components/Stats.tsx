@@ -25,25 +25,25 @@ const StatCard = ({ icon: Icon, value, label, suffix }: any) => {
   }, [value]);
 
   return (
-    <div className="text-center p-8 bg-white rounded-2xl shadow-lg border-b-4 border-[#e63946] hover:-translate-y-2 transition-transform">
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-red-50 text-[#e63946] rounded-full mb-6">
-        <Icon className="w-8 h-8" />
+    <div className="p-12 bg-white rounded-[40px] shadow-2xl border border-slate-50 hover:border-[#e63946] transition-all group">
+      <div className="inline-flex items-center justify-center w-20 h-20 bg-red-50 text-[#e63946] rounded-[24px] mb-8 group-hover:bg-[#e63946] group-hover:text-white transition-all">
+        <Icon className="w-10 h-10" />
       </div>
-      <div className="text-4xl font-extrabold text-[#0a1d37] mb-2">{count}{suffix}</div>
-      <div className="text-slate-500 font-semibold uppercase tracking-wider text-xs">{label}</div>
+      <div className="text-5xl font-black text-black mb-3">{count}{suffix}</div>
+      <div className="text-black/40 font-black uppercase tracking-[0.2em] text-[10px]">{label}</div>
     </div>
   );
 };
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-20 bg-slate-100">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <StatCard icon={Users} value={45000} label="Security Professionals" suffix="+" />
-          <StatCard icon={Building} value={1200} label="Corporate Clients" suffix="+" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <StatCard icon={Users} value={45000} label="Security Pros" suffix="+" />
+          <StatCard icon={Building} value={1200} label="Corp Clients" suffix="+" />
           <StatCard icon={Globe} value={28} label="States Presence" suffix="" />
-          <StatCard icon={Award} value={15} label="National Awards" suffix="+" />
+          <StatCard icon={Award} value={15} label="Natl Awards" suffix="+" />
         </div>
       </div>
     </section>
