@@ -61,16 +61,40 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="h-[500px] w-full bg-slate-200 overflow-hidden relative">
-        <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold z-10">
-           <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl text-center">
-              <MapPin className="w-10 h-10 text-[#e63946] mx-auto mb-4" />
-              <p className="text-[#0a1d37] text-xl font-extrabold">Visit Our Headquarters</p>
-              <p className="text-slate-600">Udhna Main Road, Surat, Gujarat</p>
+      {/* Interactive Google Map Section */}
+      <section className="h-[500px] w-full relative overflow-hidden">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3721.1444393282496!2d72.83151807503468!3d21.146654580532296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0502123f85021%3A0x673966089304380!2sBIGS%20Support%20Services%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1715856424032!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="BIGS Support Services Location"
+          className="grayscale contrast-125"
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+           <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl text-center border border-white/20 max-w-sm">
+              <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-[#e63946]" />
+              </div>
+              <p className="text-[#0a1d37] text-2xl font-black mb-2 uppercase tracking-tight">Visit Headquarters</p>
+              <p className="text-slate-600 font-bold leading-relaxed">
+                102, Western Plaza, Udhna Main Road, Surat, Gujarat 394210
+              </p>
+              <div className="mt-6">
+                <a 
+                  href="https://maps.app.goo.gl/FRL5ocm1CH2ChjTcA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#0a1d37] text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-[#e63946] transition-all pointer-events-auto"
+                >
+                  Get Directions
+                </a>
+              </div>
            </div>
         </div>
-        <img src="https://picsum.photos/seed/surat-map/1920/500" className="w-full h-full object-cover opacity-50 grayscale" alt="Map" />
       </section>
 
       <ContactCTA />
