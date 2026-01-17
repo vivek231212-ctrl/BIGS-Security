@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Shield, Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -33,55 +34,48 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-8">Quick Links</h4>
+            <h4 className="text-xl font-bold mb-8">Company</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#about" className="hover:text-white transition-colors">About Company</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Our Services</a></li>
-              <li><a href="#industries" className="hover:text-white transition-colors">Sectors Served</a></li>
-              <li><a href="#tech" className="hover:text-white transition-colors">Technology</a></li>
-              <li><a href="#careers" className="hover:text-white transition-colors">Career Opportunities</a></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/gallery" className="hover:text-white transition-colors">Our Gallery</Link></li>
+              <li><Link to="/certifications" className="hover:text-white transition-colors">Certifications</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link to="/get-quote" className="hover:text-white transition-colors">Get a Quote</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-xl font-bold mb-8">Specialized Services</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Cash Logistics</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Electronic Security</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Facility Management</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Executive Protection</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Investigations</a></li>
+              <li><Link to="/services/physical-guarding" className="hover:text-white transition-colors">Physical Guarding</Link></li>
+              <li><Link to="/services/command-centre" className="hover:text-white transition-colors">Command Centre</Link></li>
+              <li><Link to="/services/integrated-facility" className="hover:text-white transition-colors">Facility Management</Link></li>
+              <li><Link to="/services/cyber-security" className="hover:text-white transition-colors">Cyber Security</Link></li>
+              <li><Link to="/services/electronic-security" className="hover:text-white transition-colors">Electronic Security</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-8">Newsletter</h4>
-            <p className="text-slate-400 mb-6">Subscribe for security insights and company updates.</p>
-            <form className="relative" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" className="w-full bg-white/10 border border-white/20 px-6 py-4 rounded-xl focus:outline-none focus:border-[#e63946]" placeholder="Your email" />
-              <button className="absolute right-2 top-2 bottom-2 bg-[#e63946] px-4 rounded-lg hover:bg-[#c32f3a] transition-all">
-                Join
-              </button>
-            </form>
+            <h4 className="text-xl font-bold mb-8">Head Office</h4>
+            <p className="text-slate-400 mb-2">BIGS Towers, BKC, Bandra East,</p>
+            <p className="text-slate-400 mb-6">Mumbai - 400051, India</p>
+            <p className="text-slate-400 mb-2">T: +91 (22) 4567 8900</p>
+            <p className="text-slate-400">E: inquiry@bigssupport.com</p>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-center">
           <p className="text-slate-500 text-sm">
             © 2024 BIGS Support Services Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex gap-8 text-sm text-slate-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
 
-      <button 
-        onClick={scrollToTop}
-        className="absolute -top-6 right-10 bg-[#e63946] text-white p-4 rounded-2xl shadow-2xl hover:-translate-y-2 transition-all group"
-      >
+      <button onClick={scrollToTop} className="absolute -top-6 right-10 bg-[#e63946] text-white p-4 rounded-2xl shadow-2xl hover:-translate-y-2 transition-all group">
         <ArrowUp className="w-6 h-6 group-hover:animate-bounce" />
       </button>
     </footer>

@@ -1,42 +1,45 @@
 
 import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header.tsx';
-import { Hero } from './components/Hero.tsx';
-import { About } from './components/About.tsx';
-import { Stats } from './components/Stats.tsx';
-import { Services } from './components/Services.tsx';
-import { Industries } from './components/Industries.tsx';
-import { TechInnovation } from './components/TechInnovation.tsx';
-import { Training } from './components/Training.tsx';
-import { Leadership } from './components/Leadership.tsx';
-import { Milestones } from './components/Milestones.tsx';
-import { News } from './components/News.tsx';
-import { CareersCTA } from './components/CareersCTA.tsx';
-import { ClientLogos } from './components/Clients.tsx';
-import { ContactCTA } from './components/ContactCTA.tsx';
 import { Footer } from './components/Footer.tsx';
+import { HomePage } from './pages/HomePage.tsx';
+import { AboutPage } from './pages/AboutPage.tsx';
+import { ServicePage } from './pages/ServicePage.tsx';
+import { GalleryPage } from './pages/GalleryPage.tsx';
+import { CertificationsPage } from './pages/CertificationsPage.tsx';
+import { ContactPage } from './pages/ContactPage.tsx';
+import { QuotePage } from './pages/QuotePage.tsx';
+
+// ScrollToTop component to ensure pages start at the top on navigation
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Stats />
-        <Services />
-        <Industries />
-        <TechInnovation />
-        <Training />
-        <Leadership />
-        <Milestones />
-        <News />
-        <CareersCTA />
-        <ClientLogos />
-        <ContactCTA />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services/:serviceId" element={<ServicePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/get-quote" element={<QuotePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
