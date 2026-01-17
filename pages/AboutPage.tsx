@@ -28,10 +28,10 @@ export const AboutPage: React.FC = () => {
               <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">Our Essence</span>
               <h2 className="text-4xl font-extrabold text-[#0a1d37] mt-3 mb-8">India's Premier Protection Partner</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Founded in 1998, BIGS Support Services has evolved from a local guarding agency into a national powerhouse in security and facility management. We believe that security is the bedrock of progress.
+                Founded in 1998, BIGS Support Services has evolved from a local guarding agency in Surat into a national powerhouse in security and facility management. We believe that security is the bedrock of progress.
               </p>
               <p className="text-slate-600 leading-relaxed mb-10">
-                With a footprint across 28 states and a workforce of over 45,000 trained professionals, we serve as the invisible shield behind some of the most critical infrastructures in India.
+                With our headquarters in Gujarat and a footprint across 28 states, we serve as the invisible shield behind some of the most critical infrastructures in India.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex gap-4">

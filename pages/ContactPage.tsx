@@ -23,13 +23,13 @@ export const ContactPage: React.FC = () => {
             <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">
               <Headset className="w-10 h-10 text-[#e63946] mb-6" />
               <h4 className="text-xl font-extrabold text-[#0a1d37] mb-4">Support & Inquiry</h4>
-              <p className="text-slate-500 mb-6">Our help desk is available for instant operational support.</p>
+              <p className="text-slate-500 mb-6">Our help desk is available for instant operational support across Gujarat and India.</p>
               <div className="space-y-4">
-                <a href="tel:+912245678900" className="flex items-center gap-3 font-bold text-[#0a1d37] hover:text-[#e63946]">
-                   <Phone className="w-5 h-5" /> +91 22 4567 8900
+                <a href="tel:+912612278091" className="flex items-center gap-3 font-bold text-[#0a1d37] hover:text-[#e63946]">
+                   <Phone className="w-5 h-5" /> +91 261 2278091
                 </a>
-                <a href="mailto:support@bigssupport.com" className="flex items-center gap-3 font-bold text-[#0a1d37] hover:text-[#e63946]">
-                   <Mail className="w-5 h-5" /> support@bigssupport.com
+                <a href="mailto:ho.surat@bigs.in" className="flex items-center gap-3 font-bold text-[#0a1d37] hover:text-[#e63946]">
+                   <Mail className="w-5 h-5" /> ho.surat@bigs.in
                 </a>
               </div>
             </div>
@@ -37,18 +37,18 @@ export const ContactPage: React.FC = () => {
             <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">
               <Clock className="w-10 h-10 text-[#e63946] mb-6" />
               <h4 className="text-xl font-extrabold text-[#0a1d37] mb-4">Office Hours</h4>
-              <p className="text-slate-500 mb-6">Standard administrative and corporate operating hours.</p>
+              <p className="text-slate-500 mb-6">Standard administrative and corporate operating hours at our Surat HQ.</p>
               <div className="space-y-2 text-slate-600 font-medium">
                 <p>Monday - Friday: 09:00 - 18:00</p>
                 <p>Saturday: 10:00 - 14:00</p>
-                <p className="text-[#e63946] font-bold">24/7 Security Operations</p>
+                <p className="text-[#e63946] font-bold">24/7 Support Available</p>
               </div>
             </div>
 
             <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">
               <Share2 className="w-10 h-10 text-[#e63946] mb-6" />
               <h4 className="text-xl font-extrabold text-[#0a1d37] mb-4">Follow Us</h4>
-              <p className="text-slate-500 mb-6">Stay updated with our latest deployments and insights.</p>
+              <p className="text-slate-500 mb-6">Stay updated with our latest deployments and security insights.</p>
               <div className="flex gap-4">
                 {['FB', 'TW', 'LI', 'IG'].map(s => (
                   <button key={s} className="w-12 h-12 bg-white rounded-xl shadow-sm hover:bg-[#e63946] hover:text-white transition-all font-bold text-slate-400">
@@ -63,10 +63,14 @@ export const ContactPage: React.FC = () => {
 
       {/* Map Placeholder */}
       <section className="h-[500px] w-full bg-slate-200 overflow-hidden relative">
-        <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold">
-           [ Interactive Google Map Placeholder ]
+        <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold z-10">
+           <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl text-center">
+              <MapPin className="w-10 h-10 text-[#e63946] mx-auto mb-4" />
+              <p className="text-[#0a1d37] text-xl font-extrabold">Visit Our Headquarters</p>
+              <p className="text-slate-600">Udhna Main Road, Surat, Gujarat</p>
+           </div>
         </div>
-        <img src="https://picsum.photos/seed/map/1920/500" className="w-full h-full object-cover opacity-50 grayscale" alt="Map" />
+        <img src="https://picsum.photos/seed/surat-map/1920/500" className="w-full h-full object-cover opacity-50 grayscale" alt="Map" />
       </section>
 
       <ContactCTA />

@@ -2,11 +2,11 @@
 import React from 'react';
 
 const milestones = [
-  { year: '1998', title: 'The Genesis', desc: 'Started with 10 guards in a small office in Mumbai.' },
-  { year: '2005', title: 'National Expansion', desc: 'Crossed the milestone of 5,000 employees and presence in 5 states.' },
-  { year: '2012', title: 'Tech Integration', desc: 'Launched our first e-surveillance and 24/7 Command Center.' },
-  { year: '2018', title: 'IPO Listing', desc: 'Successfully listed on the National Stock Exchange.' },
-  { year: '2024', title: 'Global Outlook', desc: 'Expanded facility management services to UAE and Singapore.' },
+  { year: '1998', title: 'The Genesis', desc: 'Started with 10 guards in a small office in Surat, Gujarat.' },
+  { year: '2005', title: 'National Expansion', desc: 'Crossed the milestone of 5,000 employees and established presence in 5 states.' },
+  { year: '2012', title: 'Tech Integration', desc: 'Launched our first e-surveillance and 24/7 Command Center in Surat.' },
+  { year: '2018', title: 'IPO Listing', desc: 'Successfully listed on the National Stock Exchange as a premier Gujarat-based service provider.' },
+  { year: '2024', title: 'Global Outlook', desc: 'Expanded facility management services to UAE and Singapore while strengthening our Surat HQ.' },
 ];
 
 export const Milestones: React.FC = () => {

@@ -22,9 +22,10 @@ export const Footer: React.FC = () => {
                 <p className="text-[10px] font-medium tracking-widest text-slate-400">SUPPORT SERVICES</p>
               </div>
             </div>
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="text-slate-400 leading-relaxed mb-4">
               Protecting progress through excellence in security and facility management solutions across India since 1998.
             </p>
+            <p className="text-[10px] font-semibold text-slate-500 mb-8 uppercase tracking-widest">CIN: U74920GJ2007PTC050129</p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#e63946] transition-all"><Facebook className="w-5 h-5" /></a>
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#e63946] transition-all"><Twitter className="w-5 h-5" /></a>
@@ -57,10 +58,10 @@ export const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-xl font-bold mb-8">Head Office</h4>
-            <p className="text-slate-400 mb-2">BIGS Towers, BKC, Bandra East,</p>
-            <p className="text-slate-400 mb-6">Mumbai - 400051, India</p>
-            <p className="text-slate-400 mb-2">T: +91 (22) 4567 8900</p>
-            <p className="text-slate-400">E: inquiry@bigssupport.com</p>
+            <p className="text-slate-400 mb-2">Udhna Main Road,</p>
+            <p className="text-slate-400 mb-6">Surat, Gujarat, India</p>
+            <p className="text-slate-400 mb-2">T: +91 261 2278091</p>
+            <p className="text-slate-400">E: ho.surat@bigs.in</p>
           </div>
         </div>
 

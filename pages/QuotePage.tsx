@@ -46,7 +46,7 @@ export const QuotePage: React.FC = () => {
               
               <div className="mt-20 pt-10 border-t border-white/10">
                  <p className="text-sm font-medium text-slate-500 mb-2">Need immediate help?</p>
-                 <p className="text-lg font-bold">+91 22 4567 8900</p>
+                 <p className="text-lg font-bold">+91 261 2278091</p>
               </div>
             </div>
 

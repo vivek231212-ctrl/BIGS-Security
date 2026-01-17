@@ -21,8 +21,8 @@ export const ContactCTA: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#0a1d37] mb-1">Call Us Directly</h4>
-                  <p className="text-slate-500 font-medium">+91 (22) 4567 8900</p>
-                  <p className="text-slate-500 font-medium">+91 (22) 4567 8901</p>
+                  <p className="text-slate-500 font-medium">+91 261 2278091</p>
+                  <p className="text-slate-500 font-medium">24/7 Support Available</p>
                 </div>
               </div>
               
@@ -32,8 +32,8 @@ export const ContactCTA: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#0a1d37] mb-1">Email Support</h4>
-                  <p className="text-slate-500 font-medium">inquiry@bigssupport.com</p>
-                  <p className="text-slate-500 font-medium">careers@bigssupport.com</p>
+                  <p className="text-slate-500 font-medium">ho.surat@bigs.in</p>
+                  <p className="text-slate-500 font-medium">inquiry@bigs.in</p>
                 </div>
               </div>
               
@@ -43,7 +43,7 @@ export const ContactCTA: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#0a1d37] mb-1">Head Office</h4>
-                  <p className="text-slate-500 font-medium">BIGS Towers, BKC, Bandra East, Mumbai - 400051</p>
+                  <p className="text-slate-500 font-medium">Udhna Main Road, Surat, Gujarat - 394210</p>
                 </div>
               </div>
             </div>
