@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -13,12 +13,14 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-16 mb-20">
           <div>
-            <div className="flex items-center gap-2 mb-8">
-              <div className="bg-[#e63946] p-2 rounded-lg">
-                <Shield className="text-white w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="font-black text-2xl leading-none text-black">BIGS</h1>
+            <div className="flex items-center gap-3 mb-8">
+              <img 
+                src="https://bigs.in/lobo.jpeg" 
+                alt="BIGS Logo" 
+                className="h-14 w-auto object-contain rounded-xl shadow-sm"
+              />
+              <div className="flex flex-col">
+                <h1 className="font-black text-2xl leading-none text-black uppercase tracking-tight">BIGS</h1>
                 <p className="text-[10px] font-bold tracking-widest text-black/40">SUPPORT SERVICES</p>
               </div>
             </div>

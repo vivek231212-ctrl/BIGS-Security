@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Shield, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,11 +48,13 @@ export const Header: React.FC = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass}`}>
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="bg-[#e63946] p-1.5 sm:p-2 rounded-lg shadow-lg shadow-red-500/20">
-            <Shield className="text-white w-5 h-5 sm:w-6 sm:h-6" />
-          </div>
-          <div>
+        <Link to="/" className="flex items-center gap-3">
+          <img 
+            src="https://bigs.in/lobo.jpeg" 
+            alt="BIGS Logo" 
+            className="h-10 sm:h-12 w-auto object-contain rounded-lg shadow-sm"
+          />
+          <div className="flex flex-col">
             <h1 className={`font-black text-lg sm:text-xl leading-none ${headerTextClass}`}>BIGS</h1>
             <p className={`text-[8px] sm:text-[10px] font-bold tracking-widest ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
           </div>
