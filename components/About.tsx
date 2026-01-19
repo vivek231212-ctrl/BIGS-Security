@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const About: React.FC = () => {
   return (
     <section id="about" className="py-20 sm:py-32 bg-white">
-      <div className="container mx-auto px-[30px]">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="relative">
             <div className="overflow-hidden shadow-[30px_30px_0px_0px_rgba(211,0,0,1)] border-8 border-white">
