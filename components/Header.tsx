@@ -41,13 +41,13 @@ export const Header: React.FC = () => {
   ];
 
   const isHome = location.pathname === '/';
-  // Use consistent padding [30px] on all sides for the header container
+  // Header background logic
   const headerBgClass = (isScrolled || !isHome) ? 'bg-white shadow-md' : 'bg-transparent';
   const headerTextClass = (isScrolled || !isHome) ? 'text-black' : 'text-white';
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass}`}>
-      <div className="container mx-auto p-[30px] flex justify-between items-center">
+      <div className="w-full px-[30px] py-[30px] flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
           <img 
             src="https://bigs.in/lobo.jpeg" 
