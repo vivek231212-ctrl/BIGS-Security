@@ -104,14 +104,27 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
-          {isMenuOpen ? <X className={headerTextClass} size={28} /> : <Menu className={headerTextClass} size={28} />}
+        <button className="lg:hidden p-2 z-50" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
+          {isMenuOpen ? <X className="text-black" size={28} /> : <Menu className={headerTextClass} size={28} />}
         </button>
       </div>
 
       {/* Mobile Nav Overlay */}
       <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-[30px]">
+        <div className="flex flex-col h-full overflow-y-auto pt-6 pb-10 px-[30px]">
+          {/* Mobile Menu Logo Branding */}
+          <div className="flex items-center gap-4 mb-12 pb-6 border-b border-slate-100">
+            <img 
+              src="https://bigs.in/lobo.jpeg" 
+              alt="BIGS Logo" 
+              className="h-14 w-auto object-contain rounded-xl shadow-sm"
+            />
+            <div className="flex flex-col">
+              <h1 className="font-black text-2xl leading-none text-black">BIGS</h1>
+              <p className="text-[10px] font-black tracking-[0.2em] text-[#D30000] uppercase">SUPPORT SERVICES</p>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-8">
             {navLinks.map((link) => (
               <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
