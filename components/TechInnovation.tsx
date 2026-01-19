@@ -1,35 +1,37 @@
+
 import React from 'react';
-import { Microscope, Zap, Database, Smartphone } from 'lucide-react';
+import { Database, Smartphone } from 'lucide-react';
 
 export const TechInnovation: React.FC = () => {
   return (
-    <section id="tech" className="py-[25px] bg-white">
+    <section id="tech" className="py-24 sm:py-32 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="order-2 lg:order-1">
-            <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">The Next Generation</span>
-            <h2 className="text-4xl font-extrabold text-[#0a1d37] mt-3 mb-6">Security Reimagined through Technology</h2>
-            <p className="text-slate-600 mb-8">
-              We leverage Artificial Intelligence and Big Data to predict threats before they materialize. Our "SmartGuard" ecosystem integrates human intelligence with digital precision.
+            <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Future Proof</span>
+            <h2 className="text-4xl sm:text-6xl font-black text-black mt-3 mb-10 uppercase tracking-tighter leading-tight">Intelligence <br />Integrated</h2>
+            <p className="text-black/60 text-lg mb-12 font-medium leading-relaxed">
+              We leverage Artificial Intelligence and Big Data to predict threats before they materialize. Our ecosystem integrates human intelligence with digital precision for 360-degree awareness.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8">
-              <div className="p-6 bg-slate-50 rounded-xl">
-                <Smartphone className="text-[#e63946] mb-4 w-8 h-8" />
-                <h4 className="font-bold text-[#0a1d37] mb-2">Real-time Tracking</h4>
-                <p className="text-slate-500 text-sm">GPS-enabled patrolling and instant reporting via our proprietary app.</p>
+              <div className="p-8 bg-[#F5F5F5] border-l-4 border-[#D30000]">
+                <Smartphone className="text-[#D30000] mb-6 w-10 h-10" />
+                <h4 className="font-black text-black mb-3 uppercase tracking-tight text-xl">Real-time GPS</h4>
+                <p className="text-black/60 text-sm font-bold">Live patrol tracking and instant cloud reporting.</p>
               </div>
-              <div className="p-6 bg-slate-50 rounded-xl">
-                <Database className="text-[#e63946] mb-4 w-8 h-8" />
-                <h4 className="font-bold text-[#0a1d37] mb-2">AI Analytics</h4>
-                <p className="text-slate-500 text-sm">Predictive modeling for crowd control and resource optimization.</p>
+              <div className="p-8 bg-[#F5F5F5] border-l-4 border-[#D30000]">
+                <Database className="text-[#D30000] mb-6 w-10 h-10" />
+                <h4 className="font-black text-black mb-3 uppercase tracking-tight text-xl">AI Analytics</h4>
+                <p className="text-black/60 text-sm font-bold">Advanced threat modeling for proactive defense.</p>
               </div>
             </div>
           </div>
           
           <div className="order-1 lg:order-2 relative">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#e63946]/20 to-transparent rounded-full blur-3xl" />
-            <img src="https://picsum.photos/seed/tech/800/800" alt="Tech" className="relative z-10 rounded-2xl shadow-2xl" />
+            <div className="overflow-hidden shadow-[30px_-30px_0px_0px_rgba(211,0,0,1)] border-8 border-white">
+              <img src="https://picsum.photos/seed/tech/800/800" alt="Tech" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" />
+            </div>
           </div>
         </div>
       </div>

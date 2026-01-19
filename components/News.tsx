@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
 
@@ -5,52 +6,54 @@ const articles = [
   {
     date: 'Oct 24, 2024',
     category: 'Security Insights',
-    title: 'How AI is changing the landscape of corporate physical security.',
-    excerpt: 'Deep dive into the integration of neural networks in motion detection...'
+    title: 'AI Integration in Physical Security Frameworks.',
+    excerpt: 'Deep dive into the synergy between neural networks and ground operations.'
   },
   {
     date: 'Oct 15, 2024',
-    category: 'Company News',
-    title: 'BIGS wins "Best Security Partner" award at BFSI Summit 2024.',
-    excerpt: 'Celebrating our commitment to excellence in the banking and finance sector...'
+    category: 'Accolades',
+    title: 'Best Security Partner Award - BFSI Summit.',
+    excerpt: 'Recognizing excellence in the banking and finance security landscape.'
   },
   {
     date: 'Oct 02, 2024',
-    category: 'Safety Protocols',
-    title: 'Essential fire safety measures for modern high-rise complexes.',
-    excerpt: 'A comprehensive guide for facility managers and property owners...'
+    category: 'Operations',
+    title: 'Modern Protocols for High-Rise Complex Safety.',
+    excerpt: 'Advanced facility management and fire safety for modern infrastructure.'
   }
 ];
 
 export const News: React.FC = () => {
   return (
-    <section className="py-[25px] bg-white">
+    <section className="py-24 sm:py-32 bg-[#F5F5F5]">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div>
-            <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">Media Center</span>
-            <h2 className="text-4xl font-extrabold text-[#0a1d37] mt-3">Latest News & Insights</h2>
+            <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Media Hub</span>
+            <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Latest News</h2>
           </div>
-          <button className="hidden md:flex items-center gap-2 font-bold text-[#0a1d37] hover:text-[#e63946] transition-colors">
-            View All News <ArrowRight className="w-5 h-5" />
+          <button className="font-black text-black uppercase tracking-widest text-sm hover:text-[#D30000] transition-colors flex items-center gap-2 group border-b-4 border-[#D30000] pb-2">
+            View All Press <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {articles.map((article, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className="aspect-video rounded-2xl overflow-hidden mb-6">
-                <img src={`https://picsum.photos/seed/news${i}/800/600`} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
+            <div key={i} className="group bg-white p-2 shadow-sm hover:shadow-2xl transition-all duration-500">
+              <div className="aspect-video overflow-hidden mb-8">
+                <img src={`https://picsum.photos/seed/news${i}/800/600`} alt={article.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
               </div>
-              <div className="flex items-center gap-4 text-sm text-slate-500 font-semibold mb-4">
-                <span className="text-[#e63946] uppercase">{article.category}</span>
-                <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {article.date}</span>
+              <div className="px-6 pb-8">
+                <div className="flex items-center gap-4 text-[10px] text-black/40 font-black uppercase tracking-widest mb-4">
+                  <span className="text-[#D30000]">{article.category}</span>
+                  <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {article.date}</span>
+                </div>
+                <h3 className="text-xl font-black text-black mb-4 group-hover:text-[#D30000] transition-colors line-clamp-2 uppercase tracking-tight">{article.title}</h3>
+                <p className="text-black/60 mb-8 font-medium leading-relaxed line-clamp-2">{article.excerpt}</p>
+                <button className="text-black font-black uppercase text-xs tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                  Read Full <ArrowRight className="w-4 h-4 text-[#D30000]" />
+                </button>
               </div>
-              <h3 className="text-xl font-bold text-[#0a1d37] mb-4 group-hover:text-[#e63946] transition-colors line-clamp-2">{article.title}</h3>
-              <p className="text-slate-500 mb-6 line-clamp-2">{article.excerpt}</p>
-              <button className="text-[#0a1d37] font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                Read Article <ArrowRight className="w-4 h-4" />
-              </button>
             </div>
           ))}
         </div>
