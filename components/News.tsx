@@ -26,7 +26,7 @@ const articles = [
 export const News: React.FC = () => {
   return (
     <section className="py-24 sm:py-32 bg-[#F5F5F5]">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-[30px]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div>
             <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Media Hub</span>
@@ -50,7 +50,7 @@ export const News: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-black text-black mb-4 group-hover:text-[#D30000] transition-colors line-clamp-2 uppercase tracking-tight">{article.title}</h3>
                 <p className="text-black/60 mb-8 font-medium leading-relaxed line-clamp-2">{article.excerpt}</p>
-                <button className="text-black font-black uppercase text-xs tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                <button className="text-black font-black uppercase text-xs trackingest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                   Read Full <ArrowRight className="w-4 h-4 text-[#D30000]" />
                 </button>
               </div>

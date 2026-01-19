@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 hero-overlay" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 sm:pt-32 pb-20">
+      <div className="container mx-auto px-[30px] relative z-10 pt-24 sm:pt-32 pb-20">
         <div className="max-w-4xl">
           <h4 className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs sm:text-sm mb-6 animate-in fade-in slide-in-from-left duration-700">
             India's Leading Security Solutions

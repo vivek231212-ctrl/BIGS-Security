@@ -11,7 +11,7 @@ const leaders = [
 export const Leadership: React.FC = () => {
   return (
     <section className="py-24 sm:py-32 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-[30px]">
         <div className="text-center mb-24">
           <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Our Pillars</span>
           <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Strategic Leadership</h2>

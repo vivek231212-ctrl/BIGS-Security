@@ -5,7 +5,7 @@ import { Briefcase, ArrowRight } from 'lucide-react';
 export const CareersCTA: React.FC = () => {
   return (
     <section id="careers" className="py-8 sm:py-[25px] bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-[30px]">
         <div className="bg-white rounded-[32px] sm:rounded-[48px] p-8 sm:p-12 md:p-24 border border-slate-100 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row items-center justify-between gap-10 sm:gap-16 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-red-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           

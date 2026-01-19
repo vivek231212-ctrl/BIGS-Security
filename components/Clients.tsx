@@ -6,7 +6,7 @@ export const ClientLogos: React.FC = () => {
   
   return (
     <section className="py-24 bg-white border-y border-slate-100 overflow-hidden">
-      <div className="container mx-auto px-6 mb-16 text-center">
+      <div className="container mx-auto px-[30px] mb-16 text-center">
         <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Enterprise Trust</span>
         <h2 className="text-2xl font-black text-black uppercase tracking-widest">Partnering with Leaders</h2>
       </div>

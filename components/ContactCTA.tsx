@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Send } from 'lucide-react';
 export const ContactCTA: React.FC = () => {
   return (
     <section id="contact" className="py-24 sm:py-32 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-[30px]">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
             <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-6 block">Inquiry</span>

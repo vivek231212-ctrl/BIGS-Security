@@ -15,7 +15,7 @@ const serviceData = [
 export const Services: React.FC = () => {
   return (
     <section id="services" className="py-24 sm:py-32 bg-[#F5F5F5]">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-[30px]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div className="max-w-xl">
             <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Our Solutions</span>

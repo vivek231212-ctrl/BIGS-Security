@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass}`}>
-      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+      <div className="container mx-auto px-[30px] flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
           <img 
             src="https://bigs.in/lobo.jpeg" 
@@ -111,7 +111,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Nav Overlay */}
       <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-8">
+        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-[30px]">
           <div className="flex flex-col gap-8">
             {navLinks.map((link) => (
               <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
