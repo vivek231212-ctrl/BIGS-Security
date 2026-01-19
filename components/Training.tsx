@@ -1,42 +1,43 @@
+
 import React from 'react';
 import { GraduationCap, BookOpen, Users2 } from 'lucide-react';
 
 export const Training: React.FC = () => {
   return (
-    <section className="py-[25px] bg-slate-50">
+    <section className="py-24 sm:py-32 bg-[#F5F5F5]">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">Quality Workforce</span>
-          <h2 className="text-4xl font-extrabold text-[#0a1d37] mt-3">World-Class Training Centers</h2>
-          <p className="text-slate-500 mt-4 max-w-2xl mx-auto">
-            Our professionals undergo rigorous residential training at our specialized academies, ensuring they are prepared for any scenario.
+        <div className="text-center mb-24">
+          <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Force Quality</span>
+          <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Training Academies</h2>
+          <p className="text-black/60 mt-6 max-w-2xl mx-auto font-medium text-lg">
+            Residential training excellence ensuring our professionals are the best in the industry.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
             { 
-              title: 'Standard Guarding Training', 
+              title: 'Standard Guarding', 
               icon: GraduationCap, 
-              desc: 'Physical fitness, basic security drills, fire safety, and first-aid certification.' 
+              desc: 'Physical endurance, fire safety protocols, and basic security drills.' 
             },
             { 
-              title: 'Soft Skills & Etiquette', 
+              title: 'Corporate Etiquette', 
               icon: Users2, 
-              desc: 'Customer interaction, grooming, communication, and situational awareness.' 
+              desc: 'Advanced communication, soft skills, and situational customer management.' 
             },
             { 
-              title: 'Specialized Defense', 
+              title: 'Elite Defense', 
               icon: BookOpen, 
-              desc: 'Advanced combat training, crowd management, and modern weaponry handling for elite units.' 
+              desc: 'High-stakes combat tactics and modern surveillance hardware handling.' 
             },
           ].map((item, i) => (
-            <div key={i} className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-xl transition-all">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-50 text-[#0a1d37] rounded-full mb-8">
+            <div key={i} className="bg-white p-12 hover:shadow-2xl transition-all border-b-8 border-transparent hover:border-[#D30000] group">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-black text-white group-hover:bg-[#D30000] mb-10 transition-colors">
                 <item.icon className="w-10 h-10" />
               </div>
-              <h3 className="text-xl font-bold text-[#0a1d37] mb-4">{item.title}</h3>
-              <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+              <h3 className="text-2xl font-black text-black mb-6 uppercase tracking-tight">{item.title}</h3>
+              <p className="text-black/60 leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>

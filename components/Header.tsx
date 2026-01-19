@@ -16,7 +16,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on navigation
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
@@ -42,7 +41,7 @@ export const Header: React.FC = () => {
   ];
 
   const isHome = location.pathname === '/';
-  const headerBgClass = (isScrolled || !isHome) ? 'bg-white shadow-sm py-2' : 'bg-transparent py-4';
+  const headerBgClass = (isScrolled || !isHome) ? 'bg-white shadow-md py-2' : 'bg-transparent py-4';
   const headerTextClass = (isScrolled || !isHome) ? 'text-black' : 'text-white';
 
   return (
@@ -52,11 +51,11 @@ export const Header: React.FC = () => {
           <img 
             src="https://bigs.in/lobo.jpeg" 
             alt="BIGS Logo" 
-            className="h-10 sm:h-12 w-auto object-contain rounded-lg shadow-sm"
+            className="h-10 sm:h-12 w-auto object-contain rounded-lg"
           />
           <div className="flex flex-col">
             <h1 className={`font-black text-lg sm:text-xl leading-none ${headerTextClass}`}>BIGS</h1>
-            <p className={`text-[8px] sm:text-[10px] font-bold tracking-widest ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
+            <p className={`text-[8px] sm:text-[10px] font-bold tracking-[0.2em] ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
           </div>
         </Link>
 
@@ -66,22 +65,22 @@ export const Header: React.FC = () => {
             <Link 
               key={link.name} 
               to={link.href} 
-              className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#e63946] ${location.pathname === link.href ? 'text-[#e63946]' : headerTextClass}`}
+              className={`text-sm font-extrabold uppercase tracking-widest transition-colors hover:text-[#D30000] ${location.pathname === link.href ? 'text-[#D30000]' : headerTextClass}`}
             >
               {link.name}
             </Link>
           ))}
           
           <div className="relative group">
-            <button className={`flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#e63946] ${headerTextClass}`}>
+            <button className={`flex items-center gap-1 text-sm font-extrabold uppercase tracking-widest transition-colors hover:text-[#D30000] ${headerTextClass}`}>
               Services <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white shadow-2xl rounded-2xl py-6 mt-4 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-slate-100">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white shadow-2xl rounded-xl py-4 mt-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-slate-100">
               {serviceLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   to={link.href} 
-                  className={`block px-8 py-3 text-sm font-bold transition-colors hover:bg-red-50 hover:text-[#e63946] ${location.pathname === link.href ? 'text-[#e63946]' : 'text-black'}`}
+                  className={`block px-6 py-3 text-xs font-black uppercase tracking-widest transition-colors hover:bg-red-50 hover:text-[#D30000] ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black'}`}
                 >
                   {link.name}
                 </Link>
@@ -93,13 +92,13 @@ export const Header: React.FC = () => {
             <Link 
               key={link.name} 
               to={link.href} 
-              className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#e63946] ${location.pathname === link.href ? 'text-[#e63946]' : headerTextClass}`}
+              className={`text-sm font-extrabold uppercase tracking-widest transition-colors hover:text-[#D30000] ${location.pathname === link.href ? 'text-[#D30000]' : headerTextClass}`}
             >
               {link.name}
             </Link>
           ))}
           
-          <Link to="/get-quote" className="bg-[#e63946] text-white px-8 py-3 rounded-xl text-sm font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg shadow-red-500/20">
+          <Link to="/get-quote" className="bg-[#D30000] text-white px-8 py-3 rounded-md text-xs font-black uppercase tracking-[0.2em] hover:bg-black transition-all shadow-lg">
             Quote
           </Link>
         </nav>
@@ -113,18 +112,18 @@ export const Header: React.FC = () => {
       {/* Mobile Nav Overlay */}
       <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
         <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-8">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-2 hover:text-[#e63946]">
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
                 {link.name}
               </Link>
             ))}
             
             <div className="py-2">
-              <p className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] mb-4">Our Services</p>
-              <div className="grid grid-cols-1 gap-3 ml-4">
+              <p className="text-[10px] font-black text-[#D30000] uppercase tracking-[0.2em] mb-6">Our Services</p>
+              <div className="grid grid-cols-1 gap-4 ml-4">
                 {serviceLinks.map((link) => (
-                  <Link key={link.name} to={link.href} className="text-black font-bold text-lg hover:text-[#e63946]">
+                  <Link key={link.name} to={link.href} className="text-black font-bold text-lg hover:text-[#D30000]">
                     {link.name}
                   </Link>
                 ))}
@@ -132,12 +131,12 @@ export const Header: React.FC = () => {
             </div>
 
             {otherLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-2 hover:text-[#e63946]">
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
                 {link.name}
               </Link>
             ))}
             
-            <Link to="/get-quote" className="bg-[#e63946] text-white w-full py-5 mt-4 rounded-2xl font-black text-center uppercase tracking-widest shadow-xl">
+            <Link to="/get-quote" className="bg-[#D30000] text-white w-full py-5 mt-6 rounded-md font-black text-center uppercase tracking-widest shadow-xl">
               Get Quote
             </Link>
           </div>

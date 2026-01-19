@@ -25,25 +25,25 @@ const StatCard = ({ icon: Icon, value, label, suffix }: any) => {
   }, [value]);
 
   return (
-    <div className="p-8 sm:p-12 bg-white rounded-3xl sm:rounded-[40px] shadow-2xl border border-slate-50 hover:border-[#e63946] transition-all group">
-      <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-red-50 text-[#e63946] rounded-2xl sm:rounded-[24px] mb-6 sm:mb-8 group-hover:bg-[#e63946] group-hover:text-white transition-all">
-        <Icon className="w-8 h-8 sm:w-10 sm:h-10" />
+    <div className="p-10 bg-[#F5F5F5] border-b-8 border-transparent hover:border-[#D30000] transition-all group text-center">
+      <div className="inline-flex items-center justify-center w-16 h-16 text-[#D30000] mb-6">
+        <Icon className="w-12 h-12" />
       </div>
-      <div className="text-4xl sm:text-5xl font-black text-black mb-2 sm:mb-3">{count}{suffix}</div>
-      <div className="text-black/40 font-black uppercase tracking-[0.2em] text-[9px] sm:text-[10px]">{label}</div>
+      <div className="text-5xl font-black text-black mb-2 tracking-tighter">{count}{suffix}</div>
+      <div className="text-black font-black uppercase tracking-[0.3em] text-[10px] opacity-40">{label}</div>
     </div>
   );
 };
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-8 sm:py-[25px] bg-white">
+    <section className="py-20 bg-white border-t border-slate-100">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
-          <StatCard icon={Users} value={45000} label="Security Pros" suffix="+" />
-          <StatCard icon={Building} value={1200} label="Corp Clients" suffix="+" />
-          <StatCard icon={Globe} value={28} label="States Presence" suffix="" />
-          <StatCard icon={Award} value={15} label="Natl Awards" suffix="+" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <StatCard icon={Users} value={45000} label="Force Strength" suffix="+" />
+          <StatCard icon={Building} value={1200} label="Corporates" suffix="+" />
+          <StatCard icon={Globe} value={28} label="States" suffix="" />
+          <StatCard icon={Award} value={15} label="Excellence Awards" suffix="+" />
         </div>
       </div>
     </section>
