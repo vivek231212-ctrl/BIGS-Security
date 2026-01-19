@@ -18,12 +18,12 @@ export const Hero: React.FC = () => {
           <h4 className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs sm:text-sm mb-6 animate-in fade-in slide-in-from-left duration-700">
             India's Leading Security Solutions
           </h4>
-          <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-black leading-[1.05] mb-8 animate-in fade-in slide-in-from-left duration-1000 uppercase tracking-tighter">
+          <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-8 animate-in fade-in slide-in-from-left duration-1000 uppercase tracking-tighter">
             Total Protection <br className="hidden sm:block" /> 
-            <span className="text-white border-b-8 border-[#D30000]">
+            <span className="text-white border-b-4 sm:border-b-8 border-[#D30000]">
               Unmatched Trust
             </span>
-          </h1>
+          </h2>
           <p className="text-white text-lg sm:text-xl md:text-2xl mb-12 max-w-2xl font-medium leading-relaxed opacity-90 animate-in fade-in slide-in-from-left duration-1200">
             BIGS Support Services: World-class security guarding and facility management for India's leading enterprises.
           </p>

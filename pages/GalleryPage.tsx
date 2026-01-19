@@ -20,25 +20,25 @@ export const GalleryPage: React.FC = () => {
 
   return (
     <div className="pt-24">
-      <section className="relative py-[25px] bg-slate-900 overflow-hidden">
+      <section className="relative py-20 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('https://scontent.fstv8-2.fna.fbcdn.net/o1/v/t0/f2/m340/AQNES8Jzbl8FVSTzyUNvW06wq3IovY2FmpmXEREtXg7cYFU7c0RbayfcFnrXyDubcnTd4WXFUET7z12cFRFgK9R0WKCqAr6fz461uul3NPQGneRMzRH6rwFCCH0FvTPWqAD7F56RkP3dSQSWBS7KTVuwoZlT5g.jpeg?_nc_ht=scontent.fstv8-2.fna.fbcdn.net&_nc_gid=_mWePih3sRlTuOtdfVRvXA&_nc_cat=111&_nc_oc=AdmZV33x7IYuSi6JiZjHOMA34RZ7ed1giXLFIBD3C2iR7vM6vD-8i7dd5RBPtPitCKV6-wBt_fWCve3H_7SUcEcL&ccb=9-4&oh=00_AfoPr6NBpolTb27hfVlbPY5sCUI1iForgME4TRD8uKbLyA&oe=696D6776&_nc_sid=5b3566')` }} />
-        <div className="container mx-auto px-6 relative z-10 text-center text-white">
-          <h1 className="text-5xl font-extrabold mb-6">Operations Gallery</h1>
-          <div className="flex items-center justify-center gap-2 text-slate-300 font-medium">
-            <Link to="/" className="hover:text-white">Home</Link> <span>/</span> <span className="text-white">Gallery</span>
+        <div className="container mx-auto px-[30px] relative z-10 text-center text-white">
+          <h2 className="text-4xl sm:text-5xl font-black mb-6 uppercase tracking-tighter">Operational Gallery</h2>
+          <div className="flex items-center justify-center gap-2 text-slate-300 font-black uppercase text-xs tracking-widest">
+            <Link to="/" className="hover:text-[#D30000]">Home</Link> <span>/</span> <span className="text-white">Gallery</span>
           </div>
         </div>
       </section>
 
-      <section className="py-[25px] bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-[30px]">
           {/* Categories */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {categories.map(cat => (
               <button 
                 key={cat}
                 onClick={() => setActiveCat(cat)}
-                className={`px-8 py-3 rounded-full font-bold transition-all ${activeCat === cat ? 'bg-[#e63946] text-white shadow-lg' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-10 py-3 rounded-md font-black uppercase text-xs tracking-widest transition-all ${activeCat === cat ? 'bg-[#D30000] text-white shadow-xl' : 'bg-[#F5F5F5] text-black hover:bg-black hover:text-white'}`}
               >
                 {cat}
               </button>
@@ -48,12 +48,12 @@ export const GalleryPage: React.FC = () => {
           {/* Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
             {filteredItems.map(item => (
-              <div key={item.id} className="relative group overflow-hidden rounded-2xl cursor-pointer break-inside-avoid">
-                <img src={item.img} alt={item.title} className="w-full h-auto transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+              <div key={item.id} className="relative group overflow-hidden border-8 border-white shadow-xl cursor-pointer break-inside-avoid">
+                <img src={item.img} alt={item.title} className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-10">
                   <div className="text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-[#e63946] font-bold text-xs uppercase tracking-widest mb-2 block">{item.cat}</span>
-                    <h4 className="text-xl font-bold">{item.title}</h4>
+                    <span className="text-[#D30000] font-black text-[10px] uppercase tracking-[0.3em] mb-3 block">{item.cat}</span>
+                    <h4 className="text-2xl font-black uppercase tracking-tight">{item.title}</h4>
                   </div>
                 </div>
               </div>
