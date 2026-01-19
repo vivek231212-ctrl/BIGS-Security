@@ -61,39 +61,46 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Map Section */}
-      <section className="h-[600px] w-full relative overflow-hidden">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3721.1444393282496!2d72.83151807503468!3d21.146654580532296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0502123f85021%3A0x673966089304380!2sBIGS%20Support%20Services%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1715856424032!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          title="BIGS Support Services Location"
-          className="grayscale contrast-125"
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none w-full px-6">
-           <div className="bg-white p-12 shadow-2xl text-center border-l-8 border-[#D30000] max-w-md mx-auto">
-              <div className="w-16 h-16 bg-[#F5F5F5] text-[#D30000] rounded-md flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-8 h-8" />
-              </div>
-              <p className="text-black text-2xl font-black mb-4 uppercase tracking-tighter">Visit Headquarters</p>
-              <p className="text-black/60 font-bold leading-relaxed mb-10 uppercase text-[10px] tracking-widest">
-                102, Western Plaza, Udhna Main Road, Surat, Gujarat 394210, India
-              </p>
-              <div className="pointer-events-auto">
-                <a 
-                  href="https://maps.app.goo.gl/FRL5ocm1CH2ChjTcA" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block bg-black text-white px-10 py-5 font-black uppercase text-xs tracking-widest hover:bg-[#D30000] transition-all shadow-xl"
-                >
-                  Get Directions
-                </a>
-              </div>
-           </div>
+      {/* Full-width Map Background Section */}
+      <section className="relative w-full h-[600px] sm:h-[700px] overflow-hidden">
+        {/* Background Map */}
+        <div className="absolute inset-0 z-0">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3721.1444393282496!2d72.83151807503468!3d21.146654580532296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0502123f85021%3A0x673966089304380!2sBIGS%20Support%20Services%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1715856424032!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="BIGS Support Services Location"
+            className="grayscale contrast-125 brightness-75 w-full h-full object-cover"
+          />
+          {/* Subtle overlay to improve legibility of the card */}
+          <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        </div>
+
+        {/* Centered HQ Card */}
+        <div className="relative z-10 flex items-center justify-center h-full w-full px-[30px] pointer-events-none">
+          <div className="bg-white p-8 sm:p-14 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] text-center border-l-[12px] border-[#D30000] max-w-lg w-full pointer-events-auto transform transition-transform hover:scale-[1.02]">
+            <div className="w-20 h-20 bg-[#F5F5F5] text-[#D30000] rounded-xl flex items-center justify-center mx-auto mb-8 shadow-inner">
+              <MapPin className="w-10 h-10" />
+            </div>
+            <h3 className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4">Corporate Office</h3>
+            <p className="text-black text-3xl sm:text-4xl font-black mb-6 uppercase tracking-tighter leading-none">Visit <br />Headquarters</p>
+            <p className="text-black/70 font-black leading-relaxed mb-10 uppercase text-xs tracking-widest border-y border-slate-100 py-6">
+              102, Western Plaza, Udhna Main Road, Surat, Gujarat 394210, India
+            </p>
+            <a 
+              href="https://maps.app.goo.gl/FRL5ocm1CH2ChjTcA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full bg-black text-white px-10 py-5 font-black uppercase text-sm tracking-widest hover:bg-[#D30000] transition-all shadow-2xl group"
+            >
+              Get Directions 
+              <Share2 className="ml-3 w-4 h-4 group-hover:rotate-12 transition-transform" />
+            </a>
+          </div>
         </div>
       </section>
 
