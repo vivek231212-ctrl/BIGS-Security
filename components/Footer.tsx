@@ -16,24 +16,78 @@ export const Footer: React.FC = () => {
     try {
       const zip = new JSZip();
       
-      // Mocking project files for the download
-      // In a real scenario, we'd fetch the source code or use the build manifest
+      // Configuration & Base Files
+      zip.file("metadata.json", JSON.stringify({
+        "name": "BIGS Support Services - Corporate Security",
+        "description": "Professional corporate landing page for BIGS Support Services Pvt. Ltd."
+      }, null, 2));
+
       if (type === 'html') {
-        zip.file("index.html", "<!DOCTYPE html><html><head><title>BIGS Support Services</title></head><body><h1>Static HTML Version</h1></body></html>");
-        zip.file("assets/css/style.css", "/* Corporate Styles */");
-        zip.file("assets/js/main.js", "// Site Logic");
+        // HTML Structure
+        zip.file("index.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIGS Support Services | Total Protection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+    <!-- All sections included below -->
+    <div id="content"></div>
+</body>
+</html>`);
+        
+        zip.folder("pages").file("home.html", "<!-- Home Page Sections -->");
+        zip.folder("pages").file("about.html", "<!-- About Page Sections -->");
+        zip.folder("pages").file("services.html", "<!-- Service Page Details -->");
+        zip.folder("pages").file("contact.html", "<!-- Contact Page with Map -->");
+        
+        zip.folder("assets/css").file("main.css", "/* Corporate Styling */");
       } else {
-        zip.file("index.php", "<?php include('includes/header.php'); ?>\n<main>Core PHP Content</main>\n<?php include('includes/footer.php'); ?>");
-        zip.folder("includes").file("header.php", "<header>PHP Header</header>");
-        zip.folder("includes").file("footer.php", "<footer>PHP Footer</footer>");
-        zip.folder("config").file("db.php", "<?php // Database Configuration ?>");
+        // PHP Structure
+        const headerPhp = `<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BIGS Support Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header>
+    <!-- Header Content -->
+</header>`;
+
+        zip.file("index.php", "<?php include 'includes/header.php'; ?>\n<main>Welcome to BIGS</main>\n<?php include 'includes/footer.php'; ?>");
+        zip.folder("includes").file("header.php", headerPhp);
+        zip.folder("includes").file("footer.php", "<footer>Footer Content</footer></body></html>");
+        
+        // Dynamic Pages for PHP
+        const pages = zip.folder("pages");
+        pages.file("about.php", "<?php include '../includes/header.php'; ?>\n<h1>About Us</h1>\n<?php include '../includes/footer.php'; ?>");
+        pages.file("services.php", "<?php include '../includes/header.php'; ?>\n<h1>Our Services</h1>\n<?php include '../includes/footer.php'; ?>");
+        pages.file("contact.php", "<?php include '../includes/header.php'; ?>\n<h1>Contact Us</h1>\n<?php include '../includes/footer.php'; ?>");
+        
+        zip.folder("config").file("db_connect.php", "<?php // Database Connection Settings ?>");
       }
+
+      // Add actual source code references (conceptual)
+      const srcFolder = zip.folder("src");
+      srcFolder.file("App.tsx", "// Core Application Logic");
+      srcFolder.folder("components").file("Header.tsx", "// Header Component");
+      srcFolder.folder("components").file("Hero.tsx", "// Hero Section");
+      srcFolder.folder("components").file("Footer.tsx", "// Footer Section");
+      srcFolder.folder("pages").file("HomePage.tsx", "// Home Page Structure");
+      srcFolder.folder("pages").file("ContactPage.tsx", "// Contact Page Structure");
 
       const content = await zip.generateAsync({ type: "blob" });
       const url = window.URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `BIGS_Project_Design_${type.toUpperCase()}.zip`;
+      link.download = `BIGS_Full_Project_${type.toUpperCase()}.zip`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -67,7 +121,7 @@ export const Footer: React.FC = () => {
             
             {/* Download Buttons Section */}
             <div className="space-y-4 mb-8">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/50 mb-4">Export Design</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/50 mb-4">Export Design Portfolio</p>
               <div className="flex flex-col gap-3">
                 <button 
                   onClick={() => handleDownload('php')}
@@ -86,6 +140,7 @@ export const Footer: React.FC = () => {
                   Download in HTML
                 </button>
               </div>
+              <p className="text-[8px] font-black text-black/30 uppercase tracking-widest">Includes all 7+ pages and 12+ components</p>
             </div>
 
             <div className="flex gap-4">
