@@ -1,16 +1,53 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUp, Download, Loader2 } from 'lucide-react';
+import JSZip from 'https://esm.sh/jszip';
 
 export const Footer: React.FC = () => {
+  const [isDownloading, setIsDownloading] = useState<'php' | 'html' | null>(null);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleDownload = async (type: 'php' | 'html') => {
+    setIsDownloading(type);
+    try {
+      const zip = new JSZip();
+      
+      // Mocking project files for the download
+      // In a real scenario, we'd fetch the source code or use the build manifest
+      if (type === 'html') {
+        zip.file("index.html", "<!DOCTYPE html><html><head><title>BIGS Support Services</title></head><body><h1>Static HTML Version</h1></body></html>");
+        zip.file("assets/css/style.css", "/* Corporate Styles */");
+        zip.file("assets/js/main.js", "// Site Logic");
+      } else {
+        zip.file("index.php", "<?php include('includes/header.php'); ?>\n<main>Core PHP Content</main>\n<?php include('includes/footer.php'); ?>");
+        zip.folder("includes").file("header.php", "<header>PHP Header</header>");
+        zip.folder("includes").file("footer.php", "<footer>PHP Footer</footer>");
+        zip.folder("config").file("db.php", "<?php // Database Configuration ?>");
+      }
+
+      const content = await zip.generateAsync({ type: "blob" });
+      const url = window.URL.createObjectURL(content);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `BIGS_Project_Design_${type.toUpperCase()}.zip`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      setIsDownloading(null);
+    }
+  };
+
   return (
     <footer className="bg-[#D30000] text-white pt-24 pb-12 relative border-t-8 border-black">
-      <div className="container mx-auto px-[30px]">
+      <div className="w-full px-[30px]">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-16 mb-20">
           <div>
             <div className="flex items-center gap-3 mb-10">
@@ -27,6 +64,30 @@ export const Footer: React.FC = () => {
             <p className="text-white/80 leading-relaxed mb-8 font-medium">
               Protecting progress through excellence in security and facility management across the Indian subcontinent since 1998.
             </p>
+            
+            {/* Download Buttons Section */}
+            <div className="space-y-4 mb-8">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/50 mb-4">Export Design</p>
+              <div className="flex flex-col gap-3">
+                <button 
+                  onClick={() => handleDownload('php')}
+                  disabled={isDownloading !== null}
+                  className="flex items-center justify-center gap-3 bg-black text-white px-6 py-4 rounded-md font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition-all shadow-xl disabled:opacity-50"
+                >
+                  {isDownloading === 'php' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+                  Download in Core PHP
+                </button>
+                <button 
+                  onClick={() => handleDownload('html')}
+                  disabled={isDownloading !== null}
+                  className="flex items-center justify-center gap-3 bg-white text-[#D30000] px-6 py-4 rounded-md font-black uppercase text-[10px] tracking-widest hover:bg-black hover:text-white transition-all shadow-xl disabled:opacity-50"
+                >
+                  {isDownloading === 'html' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+                  Download in HTML
+                </button>
+              </div>
+            </div>
+
             <div className="flex gap-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="w-12 h-12 bg-black text-white rounded-md flex items-center justify-center hover:bg-white hover:text-black transition-all">
