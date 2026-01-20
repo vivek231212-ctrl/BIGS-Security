@@ -16,78 +16,140 @@ export const Footer: React.FC = () => {
     try {
       const zip = new JSZip();
       
-      // Configuration & Base Files
-      zip.file("metadata.json", JSON.stringify({
-        "name": "BIGS Support Services - Corporate Security",
-        "description": "Professional corporate landing page for BIGS Support Services Pvt. Ltd."
-      }, null, 2));
+      const commonCss = `
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .bg-bigs-red { background-color: #D30000; }
+        .text-bigs-red { color: #D30000; }
+        .border-bigs-red { border-color: #D30000; }
+      `;
 
       if (type === 'html') {
-        // HTML Structure
-        zip.file("index.html", `<!DOCTYPE html>
+        const pages = [
+          { name: 'index.html', title: 'Home' },
+          { name: 'about.html', title: 'About Us' },
+          { name: 'services.html', title: 'Our Services' },
+          { name: 'gallery.html', title: 'Operational Gallery' },
+          { name: 'certifications.html', title: 'Compliance & Certifications' },
+          { name: 'contact.html', title: 'Contact Us' },
+          { name: 'get-quote.html', title: 'Request a Quote' }
+        ];
+
+        pages.forEach(page => {
+          zip.file(page.name, `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIGS Support Services | Total Protection</title>
+    <title>${page.title} | BIGS Support Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>${commonCss}</style>
 </head>
-<body class="bg-white">
-    <!-- All sections included below -->
-    <div id="content"></div>
+<body class="bg-white text-black">
+    <header class="p-6 bg-white shadow-md flex justify-between items-center">
+        <div class="font-black text-2xl">BIGS</div>
+        <nav class="space-x-6 font-bold uppercase text-xs tracking-widest">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main class="py-20 container mx-auto px-6">
+        <h1 class="text-6xl font-black uppercase mb-8">${page.title}</h1>
+        <p class="text-xl text-gray-600 mb-12">Total protection and integrated facility management solutions.</p>
+        <div class="h-96 bg-gray-100 flex items-center justify-center border-4 border-dashed border-gray-200">
+            [Content Section for ${page.title}]
+        </div>
+    </main>
+    <footer class="bg-bigs-red text-white p-20 text-center">
+        <p class="font-black uppercase tracking-widest">&copy; 2024 BIGS Support Services</p>
+    </footer>
 </body>
 </html>`);
+        });
         
-        zip.folder("pages").file("home.html", "<!-- Home Page Sections -->");
-        zip.folder("pages").file("about.html", "<!-- About Page Sections -->");
-        zip.folder("pages").file("services.html", "<!-- Service Page Details -->");
-        zip.folder("pages").file("contact.html", "<!-- Contact Page with Map -->");
-        
-        zip.folder("assets/css").file("main.css", "/* Corporate Styling */");
+        zip.folder("assets/css").file("main.css", commonCss);
       } else {
-        // PHP Structure
-        const headerPhp = `<?php
-session_start();
-?>
+        // PHP Version with includes
+        zip.folder("includes").file("header.php", `<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BIGS Support Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $pageTitle; ?> | BIGS Support Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>${commonCss}</style>
 </head>
-<body>
-<header>
-    <!-- Header Content -->
-</header>`;
+<body class="bg-white text-black">
+    <header class="p-6 bg-white shadow-md flex justify-between items-center">
+        <div class="font-black text-2xl">BIGS</div>
+        <nav class="space-x-6 font-bold uppercase text-xs tracking-widest">
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="services.php">Services</a>
+            <a href="contact.php">Contact</a>
+        </nav>
+    </header>`);
 
-        zip.file("index.php", "<?php include 'includes/header.php'; ?>\n<main>Welcome to BIGS</main>\n<?php include 'includes/footer.php'; ?>");
-        zip.folder("includes").file("header.php", headerPhp);
-        zip.folder("includes").file("footer.php", "<footer>Footer Content</footer></body></html>");
-        
-        // Dynamic Pages for PHP
-        const pages = zip.folder("pages");
-        pages.file("about.php", "<?php include '../includes/header.php'; ?>\n<h1>About Us</h1>\n<?php include '../includes/footer.php'; ?>");
-        pages.file("services.php", "<?php include '../includes/header.php'; ?>\n<h1>Our Services</h1>\n<?php include '../includes/footer.php'; ?>");
-        pages.file("contact.php", "<?php include '../includes/header.php'; ?>\n<h1>Contact Us</h1>\n<?php include '../includes/footer.php'; ?>");
-        
-        zip.folder("config").file("db_connect.php", "<?php // Database Connection Settings ?>");
+        zip.folder("includes").file("footer.php", `
+    <footer class="bg-bigs-red text-white p-20 text-center mt-20">
+        <p class="font-black uppercase tracking-widest">&copy; <?php echo date('Y'); ?> BIGS Support Services</p>
+    </footer>
+</body>
+</html>`);
+
+        const phpPages = [
+          { name: 'index.php', title: 'Home' },
+          { name: 'about.php', title: 'About Us' },
+          { name: 'services.php', title: 'Our Services' },
+          { name: 'gallery.php', title: 'Operational Gallery' },
+          { name: 'certifications.php', title: 'Compliance & Certifications' },
+          { name: 'contact.php', title: 'Contact Us' },
+          { name: 'get-quote.php', title: 'Request a Quote' }
+        ];
+
+        phpPages.forEach(page => {
+          zip.file(page.name, `<?php 
+$pageTitle = "${page.title}";
+include 'includes/header.php'; 
+?>
+<main class="py-20 container mx-auto px-6">
+    <h1 class="text-6xl font-black uppercase mb-8"><?php echo $pageTitle; ?></h1>
+    <p class="text-xl text-gray-600 mb-12">Professional security and facility management solutions for India's leading enterprises.</p>
+    <div class="bg-gray-50 p-20 border-l-8 border-[#D30000]">
+        <h3 class="text-2xl font-black mb-4">Core Protection Services</h3>
+        <p>This is a template section for the ${page.title} page content.</p>
+    </div>
+</main>
+<?php include 'includes/footer.php'; ?>`);
+        });
+
+        zip.folder("config").file("db.php", "<?php \n// Database Configuration\n$host = 'localhost';\n$user = 'root';\n$pass = '';\n$db = 'bigs_db';\n?>");
       }
 
-      // Add actual source code references (conceptual)
-      const srcFolder = zip.folder("src");
-      srcFolder.file("App.tsx", "// Core Application Logic");
-      srcFolder.folder("components").file("Header.tsx", "// Header Component");
-      srcFolder.folder("components").file("Hero.tsx", "// Hero Section");
-      srcFolder.folder("components").file("Footer.tsx", "// Footer Section");
-      srcFolder.folder("pages").file("HomePage.tsx", "// Home Page Structure");
-      srcFolder.folder("pages").file("ContactPage.tsx", "// Contact Page Structure");
+      // Metadata for the package
+      zip.file("README.txt", `BIGS Support Services - Full Website Package
+Format: ${type.toUpperCase()}
+Includes:
+- Home Page
+- About Us
+- Services
+- Gallery
+- Certifications/Compliance
+- Contact Us
+- Quote Request Page
+
+Documentation:
+1. Extract the ZIP file.
+${type === 'php' ? '2. Place in your web server (XAMPP/WAMP/LAMP) htdocs folder.\n3. Configure config/db.php if needed.' : '2. Open index.html in any modern browser.'}`);
 
       const content = await zip.generateAsync({ type: "blob" });
       const url = window.URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `BIGS_Full_Project_${type.toUpperCase()}.zip`;
+      link.download = `BIGS_Complete_Site_${type.toUpperCase()}.zip`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -121,7 +183,7 @@ session_start();
             
             {/* Download Buttons Section */}
             <div className="space-y-4 mb-8">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/50 mb-4">Export Design Portfolio</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/50 mb-4">Export Full Website</p>
               <div className="flex flex-col gap-3">
                 <button 
                   onClick={() => handleDownload('php')}
@@ -140,7 +202,7 @@ session_start();
                   Download in HTML
                 </button>
               </div>
-              <p className="text-[8px] font-black text-black/30 uppercase tracking-widest">Includes all 7+ pages and 12+ components</p>
+              <p className="text-[8px] font-black text-black/30 uppercase tracking-widest">Includes 7 Main Pages & Core Components</p>
             </div>
 
             <div className="flex gap-4">
