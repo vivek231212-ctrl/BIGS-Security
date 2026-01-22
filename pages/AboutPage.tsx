@@ -1,10 +1,21 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Target, Eye, Shield, Award, Users, MapPin, CheckCircle } from 'lucide-react';
+import { Target, Eye, Shield, Award, Users, MapPin, CheckCircle, Map } from 'lucide-react';
 import { Leadership } from '../components/Leadership.tsx';
 
 export const AboutPage: React.FC = () => {
+  const coverageStates = [
+    { name: 'Gujarat', region: 'West' },
+    { name: 'Maharashtra', region: 'West' },
+    { name: 'Rajasthan', region: 'North' },
+    { name: 'Madhya Pradesh', region: 'Central' },
+    { name: 'Chhattisgarh', region: 'Central' },
+    { name: 'Uttar Pradesh', region: 'North' },
+    { name: 'Delhi', region: 'North' },
+    { name: 'DNH & Daman', region: 'UT' },
+  ];
+
   return (
     <div className="pt-24">
       {/* Hero Banner */}
@@ -88,6 +99,46 @@ export const AboutPage: React.FC = () => {
       </section>
 
       <Leadership />
+
+      {/* Coverage Map Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-[30px]">
+          <div className="text-center mb-16">
+            <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">National Presence</span>
+            <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Coverage Map</h2>
+            <p className="text-black/60 mt-6 max-w-2xl mx-auto font-medium text-lg">
+              Strategic deployment across key industrial and corporate hubs in India. Our centralized command operations support these major regions 24/7.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {coverageStates.map((state, i) => (
+              <div key={i} className="bg-[#F5F5F5] p-8 sm:p-10 border-b-4 border-transparent hover:border-[#D30000] transition-all group flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-black text-white group-hover:bg-[#D30000] flex items-center justify-center rounded-lg mb-6 transition-colors">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-black text-black uppercase tracking-tight mb-2">{state.name}</h4>
+                <p className="text-[#D30000] font-black uppercase text-[10px] tracking-widest">{state.region} Region</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 p-10 bg-black text-white rounded-2xl flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 bg-[#D30000] rounded-full flex items-center justify-center shrink-0">
+                <Map className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h5 className="text-2xl font-black uppercase tracking-tight leading-none mb-2">Centralized Command</h5>
+                <p className="text-white/60 font-medium text-sm">Real-time monitoring and deployment across all states from our Gujarat HQ.</p>
+              </div>
+            </div>
+            <Link to="/contact" className="bg-white text-black px-10 py-5 rounded-md font-black uppercase text-xs tracking-widest hover:bg-[#D30000] hover:text-white transition-all shrink-0">
+              Locate Nearest Branch
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-24 bg-black">
