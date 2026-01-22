@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Play } from 'lucide-react';
+import { ChevronRight, LayoutGrid } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -34,9 +34,9 @@ export const Hero: React.FC = () => {
               Our Services
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/gallery" className="bg-transparent text-white border-2 border-white px-10 py-5 rounded-md font-black uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all">
-              <Play className="w-5 h-5 fill-current" />
-              Watch Video
+            <Link to="/gallery" className="bg-transparent text-white border-2 border-white px-10 py-5 rounded-md font-black uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all group">
+              <LayoutGrid className="w-5 h-5 group-hover:rotate-6 transition-transform" />
+              Gallery
             </Link>
           </div>
         </div>
