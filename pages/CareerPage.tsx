@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { UserPlus, Upload, Send, Briefcase, GraduationCap, Users } from 'lucide-react';
+import { UserPlus, Upload, Send, Briefcase, GraduationCap, Users, User, Phone, Mail, ChevronDown, FileText } from 'lucide-react';
 
 export const CareerPage: React.FC = () => {
   return (
@@ -44,93 +44,142 @@ export const CareerPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Application Portal Section */}
-      <section className="py-24 bg-white border-t border-slate-100">
+      {/* Redesigned Application Portal Section */}
+      <section className="py-24 bg-[#F8FAFC] border-y border-slate-200">
         <div className="w-full px-6 sm:px-[30px]">
           <div id="application-portal" className="max-w-7xl mx-auto scroll-mt-32">
-            <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-              <div className="text-center md:text-left">
-                <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-[10px] mb-2 block">HR Management</span>
-                <h3 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter">Application Portal</h3>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+              <div className="text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-1 bg-[#D30000]"></div>
+                  <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-[11px]">Recruitment 2024</span>
+                </div>
+                <h3 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter leading-none">Application Dossier</h3>
+                <p className="text-slate-500 font-medium mt-6 max-w-xl">Complete your operational profile below. Our HR division reviews submissions within 48 business hours.</p>
               </div>
-              <div className="flex items-center gap-4 bg-[#F5F5F5] px-6 py-4 rounded-lg">
-                <UserPlus className="text-[#D30000] w-6 h-6" />
-                <span className="text-xs font-black uppercase tracking-widest text-black">New Personnel Registration</span>
+              <div className="flex flex-col items-end gap-2">
+                <span className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Portal Status</span>
+                <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full border border-emerald-100">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Accepting Responses</span>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 shadow-2xl overflow-hidden">
+            <div className="bg-white rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] overflow-hidden border border-slate-200">
               <form onSubmit={e => e.preventDefault()}>
-                {/* Responsive Table Header (Hidden on Mobile) */}
-                <div className="hidden lg:grid grid-cols-12 gap-0 bg-black text-white py-6 px-8 text-[10px] font-black uppercase tracking-widest">
-                  <div className="col-span-3">Applicant Name</div>
-                  <div className="col-span-2">Mobile Number</div>
-                  <div className="col-span-2">Email Address</div>
-                  <div className="col-span-2">Select Role</div>
-                  <div className="col-span-2 text-center">Documentation</div>
-                  <div className="col-span-1 text-right">Action</div>
+                {/* Modern Table Header */}
+                <div className="hidden lg:grid grid-cols-12 gap-0 bg-slate-50 border-b border-slate-100 py-8 px-10 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                  <div className="col-span-3 flex items-center gap-2"><User className="w-3.5 h-3.5" /> Full Identity</div>
+                  <div className="col-span-2 flex items-center gap-2"><Phone className="w-3.5 h-3.5" /> Contact Line</div>
+                  <div className="col-span-2 flex items-center gap-2"><Mail className="w-3.5 h-3.5" /> Digital Mail</div>
+                  <div className="col-span-2 flex items-center gap-2"><Briefcase className="w-3.5 h-3.5" /> Target Role</div>
+                  <div className="col-span-2 text-center flex items-center justify-center gap-2"><FileText className="w-3.5 h-3.5" /> Documents</div>
+                  <div className="col-span-1 text-right">Commit</div>
                 </div>
 
-                {/* Table Row / Form Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 p-8 lg:p-0 items-center lg:border-b lg:border-slate-100">
-                  <div className="lg:col-span-3 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Applicant Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="ENTER FULL NAME"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
+                {/* Table Body / Entry Row */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 p-4 lg:p-0 group hover:bg-slate-50 transition-colors duration-500">
+                  {/* Name Field */}
+                  <div className="lg:col-span-3 lg:p-10 lg:border-r border-slate-100 relative">
+                    <label className="lg:hidden text-[9px] font-black uppercase text-slate-400 mb-2 block tracking-widest">Applicant Name</label>
+                    <div className="relative group/input">
+                      <User className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within/input:text-[#D30000] transition-colors" />
+                      <input 
+                        type="text" 
+                        placeholder="LEGAL NAME"
+                        className="w-full pl-8 pr-4 py-3 bg-transparent border-b border-slate-200 focus:border-[#D30000] outline-none font-black uppercase text-sm tracking-tight transition-all placeholder:text-slate-300"
+                      />
+                    </div>
                   </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Mobile Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+91 XXXXX XXXXX"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
+
+                  {/* Mobile Field */}
+                  <div className="lg:col-span-2 lg:p-10 lg:border-r border-slate-100">
+                    <label className="lg:hidden text-[9px] font-black uppercase text-slate-400 mt-8 mb-2 block tracking-widest">Contact Line</label>
+                    <div className="relative group/input">
+                      <Phone className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within/input:text-[#D30000] transition-colors" />
+                      <input 
+                        type="tel" 
+                        placeholder="+91 MOBILE"
+                        className="w-full pl-8 pr-4 py-3 bg-transparent border-b border-slate-200 focus:border-[#D30000] outline-none font-black uppercase text-sm tracking-tight transition-all placeholder:text-slate-300"
+                      />
+                    </div>
                   </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Email Address</label>
-                    <input 
-                      type="email" 
-                      placeholder="EMAIL@EXAMPLE.COM"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
+
+                  {/* Email Field */}
+                  <div className="lg:col-span-2 lg:p-10 lg:border-r border-slate-100">
+                    <label className="lg:hidden text-[9px] font-black uppercase text-slate-400 mt-8 mb-2 block tracking-widest">Digital Mail</label>
+                    <div className="relative group/input">
+                      <Mail className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within/input:text-[#D30000] transition-colors" />
+                      <input 
+                        type="email" 
+                        placeholder="OFFICIAL EMAIL"
+                        className="w-full pl-8 pr-4 py-3 bg-transparent border-b border-slate-200 focus:border-[#D30000] outline-none font-black uppercase text-sm tracking-tight transition-all placeholder:text-slate-300"
+                      />
+                    </div>
                   </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Select Role</label>
-                    <select className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all appearance-none">
-                      <option value="">CHOOSE ROLE</option>
-                      <option value="guard">Security Guard</option>
-                      <option value="housekeeping">Housekeeping</option>
-                      <option value="manpower">Industrial Manpower</option>
-                    </select>
+
+                  {/* Role Field */}
+                  <div className="lg:col-span-2 lg:p-10 lg:border-r border-slate-100 relative">
+                    <label className="lg:hidden text-[9px] font-black uppercase text-slate-400 mt-8 mb-2 block tracking-widest">Target Role</label>
+                    <div className="relative group/input">
+                      <Briefcase className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within/input:text-[#D30000] transition-colors pointer-events-none" />
+                      <select className="w-full pl-8 pr-8 py-3 bg-transparent border-b border-slate-200 focus:border-[#D30000] outline-none font-black uppercase text-sm tracking-tight transition-all appearance-none cursor-pointer">
+                        <option value="">CHOOSE POSITION</option>
+                        <option value="guard">Security Specialist</option>
+                        <option value="supervisor">Field Supervisor</option>
+                        <option value="ops">Ops Manager</option>
+                        <option value="facility">Facility Lead</option>
+                      </select>
+                      <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within/input:text-[#D30000] transition-colors pointer-events-none" />
+                    </div>
                   </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100 text-center">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Documentation</label>
-                    <label className="flex items-center justify-center gap-2 bg-[#F5F5F5] hover:bg-black hover:text-white transition-all py-3 px-4 rounded cursor-pointer text-[10px] font-black uppercase tracking-widest">
-                      <Upload className="w-4 h-4" />
-                      <span>ATTACH FILE</span>
+
+                  {/* Documentation Field */}
+                  <div className="lg:col-span-2 lg:p-10 lg:border-r border-slate-100 text-center flex items-center justify-center">
+                    <label className="lg:hidden text-[9px] font-black uppercase text-slate-400 mt-8 mb-4 block tracking-widest">Identity Proof</label>
+                    <label className="flex items-center justify-center gap-3 bg-slate-900 text-white hover:bg-[#D30000] transition-all py-4 px-6 rounded-xl cursor-pointer text-[9px] font-black uppercase tracking-[0.2em] w-full shadow-lg group/upload">
+                      <Upload className="w-3.5 h-3.5 group-hover/upload:-translate-y-0.5 transition-transform" />
+                      <span>UPLOAD CV</span>
                       <input type="file" className="hidden" />
                     </label>
                   </div>
-                  <div className="lg:col-span-1 lg:p-6 text-right">
-                    <button className="w-full lg:w-auto bg-[#D30000] text-white p-4 lg:p-5 hover:bg-black transition-all shadow-xl group flex items-center justify-center">
-                      <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      <span className="lg:hidden ml-4 font-black uppercase tracking-widest text-sm">Submit Application</span>
+
+                  {/* Final Submit Field */}
+                  <div className="lg:col-span-1 flex items-center justify-center p-6 lg:p-0">
+                    <button className="w-full lg:h-full bg-white lg:bg-transparent text-black hover:bg-[#D30000] hover:text-white transition-all duration-300 group/btn flex items-center justify-center py-6 lg:py-0 border-t lg:border-t-0 border-slate-100">
+                      <div className="flex flex-col items-center gap-1">
+                        <Send className="w-6 h-6 lg:w-8 lg:h-8 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                        <span className="lg:hidden font-black uppercase tracking-widest text-[11px] mt-2">Submit File</span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </form>
             </div>
-            <p className="mt-6 text-center text-black/40 text-[9px] font-black uppercase tracking-[0.2em]">
-              Note: Uploaded documents must be in PDF or Image format and under 5MB.
-            </p>
+            
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 px-4">
+              <div className="flex items-center gap-4">
+                <div className="flex -space-x-3">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                      <img src={`https://picsum.photos/seed/user${i}/100/100`} alt="user" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest">
+                  +240 applicants joined this week
+                </p>
+              </div>
+              <p className="text-slate-400 text-[9px] font-black uppercase tracking-[0.2em] max-w-xs text-center sm:text-right">
+                All data is encrypted. We comply with GDPR & Indian Information Technology Act standards.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-[#F5F5F5]">
+      <section className="py-24 bg-white">
         <div className="w-full px-6 sm:px-[30px] text-center">
           <h3 className="text-2xl sm:text-3xl font-black text-black mb-10 sm:mb-12 uppercase tracking-tight">Recruitment Ethics</h3>
           <div className="max-w-4xl mx-auto bg-white p-8 sm:p-16 border-l-8 border-[#D30000] shadow-2xl">
