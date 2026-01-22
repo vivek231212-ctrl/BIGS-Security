@@ -19,18 +19,21 @@ export const Industries: React.FC = () => {
           <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Market Segments</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((item, i) => (
-            <div key={i} className="group relative h-80 overflow-hidden cursor-pointer shadow-lg border border-slate-100">
-              <img 
-                src={item.img} 
-                alt={item.name} 
-                className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
-              />
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all duration-500"></div>
-              <div className="absolute inset-0 flex flex-col justify-end p-10">
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight">{item.name}</h3>
-                <div className="h-2 w-12 bg-[#D30000] transition-all duration-500 group-hover:w-full mt-4"></div>
+            <div key={i} className="group bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+              <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img 
+                  src={item.img} 
+                  alt={item.name} 
+                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+                />
+              </div>
+              <div className="p-8 sm:p-10 text-center bg-white">
+                <h3 className="text-2xl font-black text-black uppercase tracking-tight group-hover:text-[#D30000] transition-colors duration-300">
+                  {item.name}
+                </h3>
+                <div className="h-1.5 w-12 bg-[#D30000] mx-auto mt-6 transition-all duration-500 group-hover:w-full"></div>
               </div>
             </div>
           ))}

@@ -46,17 +46,24 @@ export const GalleryPage: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {filteredItems.map(item => (
-              <div key={item.id} className="relative group overflow-hidden border-4 sm:border-8 border-white shadow-lg sm:shadow-xl cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden">
-                   <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+              <div key={item.id} className="group bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                   <img 
+                    src={item.img} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
+                  />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 sm:p-10">
-                  <div className="text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-[#D30000] font-black text-[9px] sm:text-[10px] uppercase tracking-[0.3em] mb-2 sm:mb-3 block">{item.cat}</span>
-                    <h4 className="text-xl sm:text-2xl font-black uppercase tracking-tight">{item.title}</h4>
-                  </div>
+                <div className="p-8 sm:p-10 text-center flex-grow flex flex-col justify-center">
+                  <span className="text-[#D30000] font-black text-[10px] sm:text-[11px] uppercase tracking-[0.4em] mb-4 block">
+                    {item.cat}
+                  </span>
+                  <h4 className="text-2xl sm:text-3xl font-black text-black uppercase tracking-tight leading-tight group-hover:text-[#D30000] transition-colors duration-300">
+                    {item.title}
+                  </h4>
+                  <div className="h-1 w-12 bg-[#D30000] mx-auto mt-8 transition-all duration-500 group-hover:w-full"></div>
                 </div>
               </div>
             ))}
