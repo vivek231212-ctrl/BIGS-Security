@@ -51,9 +51,9 @@ export const News: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-black text-black mb-4 group-hover:text-[#D30000] transition-colors line-clamp-2 uppercase tracking-tight">{article.title}</h3>
                 <p className="text-black/60 mb-8 font-medium leading-relaxed line-clamp-2">{article.excerpt}</p>
-                <button className="text-black font-black uppercase text-xs trackingest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                <Link to="/news" className="text-black font-black uppercase text-xs tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                   Read Full <ArrowRight className="w-4 h-4 text-[#D30000]" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
