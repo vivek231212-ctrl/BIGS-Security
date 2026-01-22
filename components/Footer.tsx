@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, ArrowUp, Download, Loader2, Code2, Globe, FileCode, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUp, Download, Loader2, Code2, Globe, FileCode, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import JSZip from 'https://esm.sh/jszip';
 
 export const Footer: React.FC = () => {
@@ -246,7 +246,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-black mb-10 uppercase tracking-[0.3em] text-black">Contact Numbers</h4>
+            <h4 className="text-sm font-black mb-10 uppercase tracking-[0.3em] text-black">Contact & Timing</h4>
             <div className="font-bold space-y-8 text-sm text-white">
               <div className="space-y-4">
                 <div className="flex items-start gap-4 group">
@@ -265,6 +265,16 @@ export const Footer: React.FC = () => {
                   <div>
                     <p className="text-white/60 uppercase text-[9px] tracking-widest mb-1">Office Landline</p>
                     <p className="font-black text-lg">+91 0261-2278091</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 group border-t border-white/10 pt-4">
+                  <div className="w-10 h-10 bg-black/30 rounded flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-white/60 uppercase text-[9px] tracking-widest mb-1">Working Hours</p>
+                    <p className="font-black text-xs uppercase tracking-tight">Monday to Friday</p>
+                    <p className="font-black text-lg">9:00 AM – 5:00 PM</p>
                   </div>
                 </div>
               </div>

@@ -39,8 +39,8 @@ export const ContactPage: React.FC = () => {
               <h4 className="text-2xl font-black text-black mb-6 uppercase tracking-tight">Hours</h4>
               <p className="text-black/60 mb-8 font-medium">Standard corporate operating hours at our Gujarat headquarters.</p>
               <div className="space-y-3 text-black font-black uppercase text-[10px] tracking-widest">
-                <p>MON - FRI: 09:00 - 18:00</p>
-                <p>SATURDAY: 10:00 - 14:00</p>
+                <p>MONDAY - FRIDAY</p>
+                <p className="text-xl">9:00 AM – 5:00 PM</p>
                 <p className="text-[#D30000]">24/7 COMMAND OPS ACTIVE</p>
               </div>
             </div>
@@ -89,7 +89,9 @@ export const ContactPage: React.FC = () => {
             <h3 className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4">Corporate Office</h3>
             <p className="text-black text-3xl sm:text-4xl font-black mb-6 uppercase tracking-tighter leading-none">Visit <br />Headquarters</p>
             <p className="text-black/70 font-black leading-relaxed mb-10 uppercase text-xs tracking-widest border-y border-slate-100 py-6">
-              102, Western Plaza, Udhna Main Road, Surat, Gujarat 394210, India
+              27/B, T-12, Silicon Shoppers, Third Floor,<br />
+              Opp. Satyanagar, Main Road, Udhna,<br />
+              Surat – 394210, Gujarat, India
             </p>
             <a 
               href="https://maps.app.goo.gl/FRL5ocm1CH2ChjTcA" 

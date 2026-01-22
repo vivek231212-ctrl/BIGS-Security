@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, Clock, Send } from 'lucide-react';
 
 export const ContactCTA: React.FC = () => {
   return (
@@ -32,6 +32,16 @@ export const ContactCTA: React.FC = () => {
                 <div>
                   <h4 className="font-black text-black uppercase tracking-widest text-sm mb-1">Electronic Mail</h4>
                   <p className="text-black text-xl font-black">ho.surat@bigs.in</p>
+                </div>
+              </div>
+
+              <div className="flex gap-8 group">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#F5F5F5] text-black group-hover:bg-[#D30000] group-hover:text-white rounded-md flex items-center justify-center transition-all">
+                  <Clock className="w-7 h-7" />
+                </div>
+                <div>
+                  <h4 className="font-black text-black uppercase tracking-widest text-sm mb-1">Working Hours</h4>
+                  <p className="text-black text-xl font-black">Mon – Fri: 9:00 AM – 5:00 PM</p>
                 </div>
               </div>
             </div>
