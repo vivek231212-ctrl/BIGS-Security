@@ -1,9 +1,32 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, FileText, Globe, Lock } from 'lucide-react';
+import { ShieldCheck, FileText, Globe, Lock, Download } from 'lucide-react';
 
 export const CertificationsPage: React.FC = () => {
+  const handleDownload = (certTitle: string) => {
+    // Mock download functionality
+    const content = `Certification: ${certTitle}\nIssued to: BIGS Support Services Pvt. Ltd.\nStatus: Valid & Verified`;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${certTitle.replace(/\s+/g, '_')}_Certificate.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
+
+  const certifications = [
+    { title: 'ISO 9001:2015', sub: 'Quality Management', desc: 'Standardized delivery processes across all service lines.', icon: FileText },
+    { title: 'PSARA License', sub: 'PSAR Act 2005', desc: 'Full compliance with Home Ministry regulations in all states.', icon: Lock },
+    { title: 'OHSAS 18001', sub: 'Health & Safety', desc: 'Ensuring the welfare of our 45,000+ member workforce.', icon: ShieldCheck },
+    { title: 'ISO 14001', sub: 'Environmental', desc: 'Sustainable facility management practices for a greener future.', icon: Globe },
+    { title: 'MSME Certified', sub: 'Govt. of India', desc: 'Recognized partner for government projects and initiatives.', icon: FileText },
+    { title: 'CAPSI Member', sub: 'Industry Assoc.', desc: 'Active contribution to national security standards and advocacy.', icon: ShieldCheck },
+  ];
+
   return (
     <div className="pt-24">
       {/* Hero Banner */}
@@ -29,19 +52,20 @@ export const CertificationsPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: 'ISO 9001:2015', sub: 'Quality Management', desc: 'Standardized delivery processes across all service lines.', icon: FileText },
-              { title: 'PSARA License', sub: 'PSAR Act 2005', desc: 'Full compliance with Home Ministry regulations in all states.', icon: Lock },
-              { title: 'OHSAS 18001', sub: 'Health & Safety', desc: 'Ensuring the welfare of our 45,000+ member workforce.', icon: ShieldCheck },
-              { title: 'ISO 14001', sub: 'Environmental', desc: 'Sustainable facility management practices for a greener future.', icon: Globe },
-              { title: 'MSME Certified', sub: 'Govt. of India', desc: 'Recognized partner for government projects and initiatives.', icon: FileText },
-              { title: 'CAPSI Member', sub: 'Industry Assoc.', desc: 'Active contribution to national security standards and advocacy.', icon: ShieldCheck },
-            ].map((cert, i) => (
-              <div key={i} className="p-12 bg-[#F5F5F5] border-b-8 border-transparent hover:border-[#D30000] transition-all group">
+            {certifications.map((cert, i) => (
+              <div key={i} className="p-12 bg-[#F5F5F5] border-b-8 border-transparent hover:border-[#D30000] transition-all group flex flex-col">
                 <cert.icon className="w-12 h-12 text-black group-hover:text-[#D30000] mb-8 transition-colors" />
                 <h4 className="text-2xl font-black text-black mb-2 uppercase tracking-tight">{cert.title}</h4>
                 <p className="text-[#D30000] font-black text-[10px] uppercase tracking-[0.2em] mb-6">{cert.sub}</p>
-                <p className="text-black/60 leading-relaxed font-medium">{cert.desc}</p>
+                <p className="text-black/60 leading-relaxed font-medium mb-10 flex-grow">{cert.desc}</p>
+                
+                <button 
+                  onClick={() => handleDownload(cert.title)}
+                  className="flex items-center justify-center gap-3 bg-black text-white px-6 py-4 rounded-md font-black uppercase text-[10px] tracking-widest hover:bg-[#D30000] transition-all shadow-lg mt-auto"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Certificate
+                </button>
               </div>
             ))}
           </div>
