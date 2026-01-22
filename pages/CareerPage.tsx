@@ -44,7 +44,7 @@ export const CareerPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Application Portal Section - Updated Theme to match image exactly */}
+      {/* Application Portal Section - Updated font color to black for inputs */}
       <section className="py-24 bg-white">
         <div className="w-full px-6 sm:px-[30px] overflow-x-auto">
           <div className="max-w-7xl mx-auto min-w-[1000px] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
@@ -65,7 +65,7 @@ export const CareerPage: React.FC = () => {
                 <input 
                   type="text" 
                   placeholder="ENTER FULL NAME"
-                  className="w-full bg-transparent outline-none font-black text-[#A0AEC0] text-[11px] placeholder:text-[#A0AEC0] tracking-tight uppercase"
+                  className="w-full bg-transparent outline-none font-black text-black text-[11px] placeholder:text-[#A0AEC0] tracking-tight uppercase"
                 />
               </div>
 
@@ -74,7 +74,7 @@ export const CareerPage: React.FC = () => {
                 <input 
                   type="tel" 
                   placeholder="+91 XXXXX XXXXX"
-                  className="w-full bg-transparent outline-none font-black text-[#A0AEC0] text-[11px] text-center placeholder:text-[#A0AEC0] tracking-tight uppercase"
+                  className="w-full bg-transparent outline-none font-black text-black text-[11px] text-center placeholder:text-[#A0AEC0] tracking-tight uppercase"
                 />
               </div>
 
@@ -83,7 +83,7 @@ export const CareerPage: React.FC = () => {
                 <input 
                   type="email" 
                   placeholder="EMAIL@EXAMPLE.C"
-                  className="w-full bg-transparent outline-none font-black text-[#A0AEC0] text-[11px] text-center placeholder:text-[#A0AEC0] tracking-tight uppercase"
+                  className="w-full bg-transparent outline-none font-black text-black text-[11px] text-center placeholder:text-[#A0AEC0] tracking-tight uppercase"
                 />
               </div>
 
