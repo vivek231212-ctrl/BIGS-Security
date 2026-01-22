@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
 
 const articles = [
@@ -32,9 +33,9 @@ export const News: React.FC = () => {
             <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Media Hub</span>
             <h2 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter">Latest News</h2>
           </div>
-          <button className="font-black text-black uppercase tracking-widest text-sm hover:text-[#D30000] transition-colors flex items-center gap-2 group border-b-4 border-[#D30000] pb-2">
+          <Link to="/news" className="font-black text-black uppercase tracking-widest text-sm hover:text-[#D30000] transition-colors flex items-center gap-2 group border-b-4 border-[#D30000] pb-2">
             View All Press <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">

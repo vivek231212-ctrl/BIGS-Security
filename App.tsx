@@ -10,6 +10,7 @@ import { GalleryPage } from './pages/GalleryPage.tsx';
 import { CertificationsPage } from './pages/CertificationsPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { QuotePage } from './pages/QuotePage.tsx';
+import { NewsPage } from './pages/NewsPage.tsx';
 
 // ScrollToTop component to ensure pages start at the top on navigation
 const ScrollToTop = () => {
@@ -35,6 +36,7 @@ const App: React.FC = () => {
             <Route path="/certifications" element={<CertificationsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/get-quote" element={<QuotePage />} />
+            <Route path="/news" element={<NewsPage />} />
           </Routes>
         </main>
         <Footer />
