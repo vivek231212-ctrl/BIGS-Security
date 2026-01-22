@@ -43,6 +43,7 @@ export const Header: React.FC = () => {
   ];
 
   const otherLinks = [
+    { name: 'Careers', href: '/careers' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Certifications', href: '/certifications' },
     { name: 'Contact', href: '/contact' },

@@ -21,7 +21,7 @@ export const CareersCTA: React.FC = () => {
           </div>
           <div className="flex-shrink-0 relative z-10 w-full md:w-auto">
             <Link 
-              to="/certifications#application-portal" 
+              to="/careers" 
               className="bg-black text-white w-full md:w-auto px-8 py-5 sm:px-12 sm:py-6 rounded-2xl font-black text-base sm:text-lg uppercase tracking-widest hover:bg-[#e63946] transition-all shadow-2xl flex items-center justify-center gap-4 group text-center"
             >
               Apply Now <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 group-hover:translate-x-2 transition-transform" />

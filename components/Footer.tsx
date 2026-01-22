@@ -133,18 +133,18 @@ export const Footer: React.FC = () => {
         <div class="container mx-auto px-8">
             <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-20">
                 <div>
-                    <h4 class="text-black font-black uppercase tracking-widest text-xs mb-10">Address</h4>
-                    <p class="text-white font-bold text-sm leading-relaxed">27/B, T-12, Silicon Shoppers, Third Floor,<br>Opp. Satyanagar, Main Road, Udhna,<br>Surat – 394210</p>
+                    <h4 className="text-black font-black uppercase tracking-widest text-xs mb-10">Address</h4>
+                    <p className="text-white font-bold text-sm leading-relaxed">27/B, T-12, Silicon Shoppers, Third Floor,<br>Opp. Satyanagar, Main Road, Udhna,<br>Surat – 394210</p>
                 </div>
                 <div>
-                    <h4 class="text-black font-black uppercase tracking-widest text-xs mb-10">Contact</h4>
-                    <p class="text-2xl font-black">+91 93766 44227</p>
-                    <p class="text-2xl font-black">+91 0261-2278091</p>
+                    <h4 className="text-black font-black uppercase tracking-widest text-xs mb-10">Contact</h4>
+                    <p className="text-2xl font-black">+91 93766 44227</p>
+                    <p className="text-2xl font-black">+91 0261-2278091</p>
                 </div>
                 <div>
-                    <h4 class="text-black font-black uppercase tracking-widest text-xs mb-10">Emails</h4>
-                    <p class="font-bold">ho.surat@bigs.in</p>
-                    <p class="font-bold">support@bigssupport.com</p>
+                    <h4 className="text-black font-black uppercase tracking-widest text-xs mb-10">Emails</h4>
+                    <p className="font-bold">ho.surat@bigs.in</p>
+                    <p className="font-bold">support@bigssupport.com</p>
                 </div>
             </div>
         </div>
@@ -238,6 +238,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-black mb-10 uppercase tracking-[0.3em] text-black">Company</h4>
             <ul className="space-y-4 font-black uppercase text-xs tracking-widest">
               <li><Link to="/about" className="hover:text-black transition-colors">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-black transition-colors">Careers</Link></li>
               <li><Link to="/gallery" className="hover:text-black transition-colors">Gallery</Link></li>
               <li><Link to="/certifications" className="hover:text-black transition-colors">Compliance</Link></li>
               <li><Link to="/contact" className="hover:text-black transition-colors">Contact</Link></li>

@@ -1,27 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShieldCheck, FileText, Globe, Lock, Download, UserPlus, Upload, Send } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ShieldCheck, FileText, Globe, Lock, Download } from 'lucide-react';
 
 export const CertificationsPage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    mobile: '',
-    email: '',
-    role: '',
-  });
-  
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash === '#application-portal') {
-      const element = document.getElementById('application-portal');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [hash]);
-
   const handleDownload = (certTitle: string) => {
     const content = `Certification: ${certTitle}\nIssued to: BIGS Support Services Pvt. Ltd.\nStatus: Valid & Verified`;
     const blob = new Blob([content], { type: 'text/plain' });
@@ -86,88 +68,6 @@ export const CertificationsPage: React.FC = () => {
                 </button>
               </div>
             ))}
-          </div>
-
-          {/* New Application Portal Section with anchor ID */}
-          <div id="application-portal" className="max-w-7xl mx-auto border-t border-slate-100 pt-20 scroll-mt-32">
-            <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-              <div className="text-center md:text-left">
-                <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-[10px] mb-2 block">HR Management</span>
-                <h3 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter">Application Portal</h3>
-              </div>
-              <div className="flex items-center gap-4 bg-[#F5F5F5] px-6 py-4 rounded-lg">
-                <UserPlus className="text-[#D30000] w-6 h-6" />
-                <span className="text-xs font-black uppercase tracking-widest text-black">New Personnel Registration</span>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 shadow-2xl overflow-hidden">
-              <form onSubmit={e => e.preventDefault()}>
-                {/* Responsive Table Header (Hidden on Mobile) */}
-                <div className="hidden lg:grid grid-cols-12 gap-0 bg-black text-white py-6 px-8 text-[10px] font-black uppercase tracking-widest">
-                  <div className="col-span-3">Applicant Name</div>
-                  <div className="col-span-2">Mobile Number</div>
-                  <div className="col-span-2">Email Address</div>
-                  <div className="col-span-2">Select Role</div>
-                  <div className="col-span-2 text-center">Documentation</div>
-                  <div className="col-span-1 text-right">Action</div>
-                </div>
-
-                {/* Table Row / Form Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 p-8 lg:p-0 items-center lg:border-b lg:border-slate-100">
-                  <div className="lg:col-span-3 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Applicant Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="ENTER FULL NAME"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
-                  </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Mobile Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+91 XXXXX XXXXX"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
-                  </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Email Address</label>
-                    <input 
-                      type="email" 
-                      placeholder="EMAIL@EXAMPLE.COM"
-                      className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all"
-                    />
-                  </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Select Role</label>
-                    <select className="w-full px-4 py-3 bg-[#F5F5F5] lg:bg-transparent border-2 border-transparent focus:border-[#D30000] outline-none font-bold uppercase text-xs tracking-tight transition-all appearance-none">
-                      <option value="">CHOOSE ROLE</option>
-                      <option value="guard">Security Guard</option>
-                      <option value="housekeeping">Housekeeping</option>
-                      <option value="manpower">Industrial Manpower</option>
-                    </select>
-                  </div>
-                  <div className="lg:col-span-2 lg:p-6 lg:border-r border-slate-100 text-center">
-                    <label className="lg:hidden text-[9px] font-black uppercase text-[#D30000] mb-2 block tracking-widest">Documentation</label>
-                    <label className="flex items-center justify-center gap-2 bg-[#F5F5F5] hover:bg-black hover:text-white transition-all py-3 px-4 rounded cursor-pointer text-[10px] font-black uppercase tracking-widest">
-                      <Upload className="w-4 h-4" />
-                      <span>ATTACH FILE</span>
-                      <input type="file" className="hidden" />
-                    </label>
-                  </div>
-                  <div className="lg:col-span-1 lg:p-6 text-right">
-                    <button className="w-full lg:w-auto bg-[#D30000] text-white p-4 lg:p-5 hover:bg-black transition-all shadow-xl group flex items-center justify-center">
-                      <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      <span className="lg:hidden ml-4 font-black uppercase tracking-widest text-sm">Submit Application</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <p className="mt-6 text-center text-black/40 text-[9px] font-black uppercase tracking-[0.2em]">
-              Note: Uploaded documents must be in PDF or Image format and under 5MB.
-            </p>
           </div>
         </div>
       </section>
