@@ -246,7 +246,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-black mb-10 uppercase tracking-[0.3em] text-black">Contact & Timing</h4>
+            <h4 className="text-sm font-black mb-10 uppercase tracking-[0.3em] text-black">Contact us</h4>
             <div className="font-bold space-y-8 text-sm text-white">
               <div className="space-y-4">
                 <div className="flex items-start gap-4 group">
