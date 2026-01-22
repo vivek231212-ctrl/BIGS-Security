@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
             </Link>
             <Link to="/contact" className="bg-transparent text-white border-2 border-white px-10 py-5 rounded-md font-black uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all group">
               <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              Contact
+              Contact us
             </Link>
           </div>
         </div>
