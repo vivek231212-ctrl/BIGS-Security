@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ShieldCheck, FileText, Globe, Lock, Download, UserPlus, Upload, Send } from 'lucide-react';
 
 export const CertificationsPage: React.FC = () => {
@@ -10,6 +10,17 @@ export const CertificationsPage: React.FC = () => {
     email: '',
     role: '',
   });
+  
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash === '#application-portal') {
+      const element = document.getElementById('application-portal');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
 
   const handleDownload = (certTitle: string) => {
     const content = `Certification: ${certTitle}\nIssued to: BIGS Support Services Pvt. Ltd.\nStatus: Valid & Verified`;
@@ -77,8 +88,8 @@ export const CertificationsPage: React.FC = () => {
             ))}
           </div>
 
-          {/* New Application Portal Section */}
-          <div className="max-w-7xl mx-auto border-t border-slate-100 pt-20">
+          {/* New Application Portal Section with anchor ID */}
+          <div id="application-portal" className="max-w-7xl mx-auto border-t border-slate-100 pt-20 scroll-mt-32">
             <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
               <div className="text-center md:text-left">
                 <span className="text-[#D30000] font-black tracking-[0.4em] uppercase text-[10px] mb-2 block">HR Management</span>
