@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
       </div>
 
       <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass} ${pyClass}`}>
-        <div className="w-full px-4 sm:px-[30px] flex justify-between items-center">
+        <div className="w-full px-6 sm:px-[30px] flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img 
               src="https://bigs.in/lobo.jpeg" 
@@ -142,9 +142,13 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Mobile Toggle */}
-          <button className="lg:hidden p-2 z-50 mr-12 sm:mr-16" onClick={toggleMenu} aria-label="Toggle Menu">
-            {isMenuOpen ? <X className="text-black" size={24} /> : <Menu className={headerTextClass} size={24} />}
+          {/* Mobile Toggle - Adjusted with mr-16 to move inward from screen edge and clear the fixed badge */}
+          <button 
+            className="lg:hidden p-3 z-50 mr-14 sm:mr-20 hover:bg-black/5 rounded-full transition-colors flex items-center justify-center" 
+            onClick={toggleMenu} 
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X className="text-black" size={26} /> : <Menu className={headerTextClass} size={26} />}
           </button>
         </div>
 
