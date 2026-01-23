@@ -61,9 +61,13 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Great Place to Work Badge - Fixed Position */}
-      <div className="fixed top-0 right-4 sm:right-[30px] z-[60] pointer-events-none">
-        <div className="bg-white border-x border-b border-slate-200 shadow-xl p-2 sm:p-3 rounded-b-lg flex flex-col items-center justify-center min-w-[55px] sm:min-w-[75px] pointer-events-auto group hover:-translate-y-0.5 transition-all duration-300">
+      {/* Great Place to Work Badge - Visible only at the top of the page */}
+      <div 
+        className={`fixed top-0 right-4 sm:right-[30px] z-[60] pointer-events-none transition-all duration-500 ease-in-out ${
+          isScrolled ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'
+        }`}
+      >
+        <div className="bg-white border-x border-b border-slate-200 shadow-xl p-2 sm:p-3 rounded-b-lg flex flex-col items-center justify-center min-w-[55px] sm:min-w-[75px] pointer-events-auto group">
           <div className="text-[#D30000] font-black text-[6px] sm:text-[8px] leading-tight uppercase text-center tracking-tighter">
             Great<br/>Place<br/>To<br/>Work
           </div>
@@ -74,7 +78,7 @@ export const Header: React.FC = () => {
           <div className="text-black/40 text-[4px] sm:text-[6px] font-black mt-1 uppercase tracking-tighter">
             MAR 2024 - 2025
           </div>
-          <div className="text-black/10 mt-1 sm:mt-1.5 group-hover:text-[#D30000]/20 transition-colors">
+          <div className="text-black/10 mt-1 sm:mt-1.5">
             <Award size={10} className="sm:size-12" />
           </div>
         </div>
