@@ -91,12 +91,9 @@ export const NewsPage: React.FC = () => {
                       <h3 className="text-xl font-black text-black mb-4 group-hover:text-[#D30000] transition-colors uppercase tracking-tight line-clamp-2">
                         {article.title}
                       </h3>
-                      <p className="text-black/60 mb-8 font-medium leading-relaxed line-clamp-3 text-sm flex-grow">
+                      <p className="text-black/60 font-medium leading-relaxed line-clamp-3 text-sm flex-grow">
                         {article.excerpt}
                       </p>
-                      <button className="text-black font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform self-start">
-                        Full Article <ArrowRight className="w-4 h-4 text-[#D30000]" />
-                      </button>
                     </div>
                   </div>
                 ))}
