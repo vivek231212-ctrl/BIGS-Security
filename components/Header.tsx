@@ -20,17 +20,16 @@ export const Header: React.FC = () => {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsServicesMobileOpen(false);
-    if (isMenuOpen) {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = 'auto';
   }, [location.pathname]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    if (!isMenuOpen) {
+    const newState = !isMenuOpen;
+    setIsMenuOpen(newState);
+    if (!newState) {
       setIsServicesMobileOpen(false);
     }
-    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = newState ? 'hidden' : 'auto';
   };
 
   const navLinks = [
@@ -61,10 +60,71 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Great Place to Work Badge - Visible only at the top of the page */}
+      {/* Mobile Nav Overlay - Moved outside header to prevent clipping */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-500 ease-in-out transform ${
+          isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-[30px]">
+          {/* Mobile Menu Logo Header */}
+          <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
+              <img 
+                src="https://bigs.in/lobo.jpeg" 
+                alt="BIGS Logo" 
+                className="h-10 w-auto object-contain rounded-lg"
+              />
+              <div className="flex flex-col">
+                <h1 className="font-black text-xl leading-none text-black uppercase tracking-tighter">BIGS</h1>
+                <p className="text-[8px] font-bold tracking-[0.2em] text-black/50">SUPPORT SERVICES</p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {navLinks.map((link) => (
+              <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
+                {link.name}
+              </Link>
+            ))}
+            
+            <div className="flex flex-col border-b border-slate-100 pb-4">
+              <button 
+                onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
+                className={`flex items-center justify-between font-black text-2xl sm:text-3xl uppercase text-left transition-colors ${location.pathname.startsWith('/services') ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}
+              >
+                Services <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isServicesMobileOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`grid transition-all duration-300 ease-in-out ${isServicesMobileOpen ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
+                <div className="overflow-hidden flex flex-col gap-4 ml-4">
+                  {serviceLinks.map((link) => (
+                    <Link key={link.name} to={link.href} className={`font-bold text-lg sm:text-xl transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black/60 hover:text-[#D30000]'}`}>
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {otherLinks.map((link) => (
+              <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
+                {link.name}
+              </Link>
+            ))}
+            
+            <Link to="/get-quote" className="bg-[#D30000] text-white w-full py-5 mt-6 rounded-md font-black text-center uppercase tracking-widest shadow-xl hover:bg-black transition-all">
+              Get Quote
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Great Place to Work Badge */}
       <div 
         className={`fixed top-0 right-4 sm:right-[30px] z-[60] pointer-events-none transition-all duration-500 ease-in-out ${
-          isScrolled ? 'opacity-0 -translate-y-8' : 'opacity-100 translate-y-0'
+          isScrolled || isMenuOpen ? 'opacity-0 -translate-y-8' : 'opacity-100 translate-y-0'
         }`}
       >
         <div className="bg-white border-x border-b border-slate-200 shadow-2xl p-2.5 sm:p-3 rounded-b-lg flex flex-col items-center justify-center min-w-[70px] sm:min-w-[85px] pointer-events-auto group">
@@ -84,7 +144,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      <header className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass} ${pyClass}`}>
+      <header className={`fixed w-full z-[110] transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-none' : headerBgClass} ${pyClass}`}>
         <div className="w-full px-6 sm:px-[30px] flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img 
@@ -93,8 +153,8 @@ export const Header: React.FC = () => {
               className="h-9 sm:h-12 w-auto object-contain rounded-lg"
             />
             <div className="flex flex-col">
-              <h1 className={`font-black text-base sm:text-xl leading-none ${headerTextClass}`}>BIGS</h1>
-              <p className={`text-[7px] sm:text-[10px] font-bold tracking-[0.2em] ${(isScrolled || !isHome) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
+              <h1 className={`font-black text-base sm:text-xl leading-none ${isMenuOpen ? 'text-black' : headerTextClass}`}>BIGS</h1>
+              <p className={`text-[7px] sm:text-[10px] font-bold tracking-[0.2em] ${(isScrolled || !isHome || isMenuOpen) ? 'text-black/50' : 'text-white/70'}`}>SUPPORT SERVICES</p>
             </div>
           </Link>
 
@@ -142,73 +202,16 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Mobile Toggle - Dynamic Margin based on Scroll */}
+          {/* Mobile Toggle */}
           <button 
-            className={`lg:hidden p-3 z-50 transition-all duration-300 hover:bg-black/5 rounded-full flex items-center justify-center ${
-              isScrolled ? 'mr-0' : 'mr-14 sm:mr-20'
+            className={`lg:hidden p-3 transition-all duration-300 hover:bg-black/5 rounded-full flex items-center justify-center ${
+              (isScrolled || isMenuOpen) ? 'mr-0' : 'mr-14 sm:mr-20'
             }`} 
             onClick={toggleMenu} 
             aria-label="Toggle Menu"
           >
             {isMenuOpen ? <X className="text-black" size={26} /> : <Menu className={headerTextClass} size={26} />}
           </button>
-        </div>
-
-        {/* Mobile Nav Overlay */}
-        <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-          <div className="flex flex-col h-full overflow-y-auto pt-8 pb-10 px-6 sm:px-[30px]">
-            {/* Mobile Menu Logo Header */}
-            <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
-                <img 
-                  src="https://bigs.in/lobo.jpeg" 
-                  alt="BIGS Logo" 
-                  className="h-10 w-auto object-contain rounded-lg"
-                />
-                <div className="flex flex-col">
-                  <h1 className="font-black text-xl leading-none text-black uppercase tracking-tighter">BIGS</h1>
-                  <p className="text-[8px] font-bold tracking-[0.2em] text-black/50">SUPPORT SERVICES</p>
-                </div>
-              </Link>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
-                  {link.name}
-                </Link>
-              ))}
-              
-              <div className="flex flex-col border-b border-slate-100 pb-4">
-                <button 
-                  onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
-                  className={`flex items-center justify-between font-black text-2xl sm:text-3xl uppercase text-left transition-colors ${location.pathname.startsWith('/services') ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}
-                >
-                  Services <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isServicesMobileOpen ? 'rotate-180' : ''}`} />
-                </button>
-                
-                <div className={`grid transition-all duration-300 ease-in-out ${isServicesMobileOpen ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
-                  <div className="overflow-hidden flex flex-col gap-4 ml-4">
-                    {serviceLinks.map((link) => (
-                      <Link key={link.name} to={link.href} className={`font-bold text-lg sm:text-xl transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black/60 hover:text-[#D30000]'}`}>
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {otherLinks.map((link) => (
-                <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
-                  {link.name}
-                </Link>
-              ))}
-              
-              <Link to="/get-quote" className="bg-[#D30000] text-white w-full py-5 mt-6 rounded-md font-black text-center uppercase tracking-widest shadow-xl hover:bg-black transition-all">
-                Get Quote
-              </Link>
-            </div>
-          </div>
         </div>
       </header>
     </>
