@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Great Place to Work Badge - Enhanced for Mobile Visibility */}
+      {/* Great Place to Work Badge - Visible only at the top of the page */}
       <div 
         className={`fixed top-0 right-4 sm:right-[30px] z-[60] pointer-events-none transition-all duration-500 ease-in-out ${
           isScrolled ? 'opacity-0 -translate-y-8' : 'opacity-100 translate-y-0'
@@ -142,9 +142,11 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle - Dynamic Margin based on Scroll */}
           <button 
-            className="lg:hidden p-3 z-50 mr-14 sm:mr-20 hover:bg-black/5 rounded-full transition-colors flex items-center justify-center" 
+            className={`lg:hidden p-3 z-50 transition-all duration-300 hover:bg-black/5 rounded-full flex items-center justify-center ${
+              isScrolled ? 'mr-0' : 'mr-14 sm:mr-20'
+            }`} 
             onClick={toggleMenu} 
             aria-label="Toggle Menu"
           >
