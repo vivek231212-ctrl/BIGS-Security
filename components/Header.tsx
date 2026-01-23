@@ -60,28 +60,13 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Mobile Nav Overlay - Moved outside header to prevent clipping */}
+      {/* Mobile Nav Overlay */}
       <div 
         className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-500 ease-in-out transform ${
           isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-[30px]">
-          {/* Mobile Menu Logo Header */}
-          <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
-              <img 
-                src="https://bigs.in/lobo.jpeg" 
-                alt="BIGS Logo" 
-                className="h-10 w-auto object-contain rounded-lg"
-              />
-              <div className="flex flex-col">
-                <h1 className="font-black text-xl leading-none text-black uppercase tracking-tighter">BIGS</h1>
-                <p className="text-[8px] font-bold tracking-[0.2em] text-black/50">SUPPORT SERVICES</p>
-              </div>
-            </Link>
-          </div>
-
+        <div className="flex flex-col h-full overflow-y-auto pt-28 pb-10 px-6 sm:px-[30px]">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
@@ -144,7 +129,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      <header className={`fixed w-full z-[110] transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-none' : headerBgClass} ${pyClass}`}>
+      <header className={`fixed w-full z-[110] transition-all duration-300 ${isMenuOpen ? 'bg-white' : headerBgClass} ${pyClass}`}>
         <div className="w-full px-6 sm:px-[30px] flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img 
