@@ -61,25 +61,25 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Great Place to Work Badge - Visible only at the top of the page */}
+      {/* Great Place to Work Badge - Enhanced for Mobile Visibility */}
       <div 
         className={`fixed top-0 right-4 sm:right-[30px] z-[60] pointer-events-none transition-all duration-500 ease-in-out ${
-          isScrolled ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'
+          isScrolled ? 'opacity-0 -translate-y-8' : 'opacity-100 translate-y-0'
         }`}
       >
-        <div className="bg-white border-x border-b border-slate-200 shadow-xl p-2 sm:p-3 rounded-b-lg flex flex-col items-center justify-center min-w-[55px] sm:min-w-[75px] pointer-events-auto group">
-          <div className="text-[#D30000] font-black text-[6px] sm:text-[8px] leading-tight uppercase text-center tracking-tighter">
+        <div className="bg-white border-x border-b border-slate-200 shadow-2xl p-2.5 sm:p-3 rounded-b-lg flex flex-col items-center justify-center min-w-[70px] sm:min-w-[85px] pointer-events-auto group">
+          <div className="text-[#D30000] font-black text-[8px] sm:text-[10px] leading-tight uppercase text-center tracking-tighter">
             Great<br/>Place<br/>To<br/>Work
           </div>
-          <div className="w-full h-[1px] bg-[#D30000]/20 my-1 sm:my-1.5" />
-          <div className="bg-[#D30000] text-white text-[5px] sm:text-[7px] font-black uppercase px-1.5 py-0.5 rounded-[1px] tracking-widest">
+          <div className="w-full h-[1px] bg-[#D30000]/20 my-1.5 sm:my-2" />
+          <div className="bg-[#D30000] text-white text-[7px] sm:text-[9px] font-black uppercase px-2 py-0.5 rounded-[1px] tracking-widest">
             Certified
           </div>
-          <div className="text-black/40 text-[4px] sm:text-[6px] font-black mt-1 uppercase tracking-tighter">
+          <div className="text-black/40 text-[5px] sm:text-[7px] font-black mt-1.5 uppercase tracking-tighter">
             MAR 2024 - 2025
           </div>
-          <div className="text-black/10 mt-1 sm:mt-1.5">
-            <Award size={10} className="sm:size-12" />
+          <div className="text-black/10 mt-1.5 sm:mt-2">
+            <Award size={14} className="sm:size-12" />
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Mobile Toggle - Adjusted with mr-16 to move inward from screen edge and clear the fixed badge */}
+          {/* Mobile Toggle */}
           <button 
             className="lg:hidden p-3 z-50 mr-14 sm:mr-20 hover:bg-black/5 rounded-full transition-colors flex items-center justify-center" 
             onClick={toggleMenu} 
