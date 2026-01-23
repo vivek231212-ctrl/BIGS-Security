@@ -126,10 +126,25 @@ export const Header: React.FC = () => {
 
       {/* Mobile Nav Overlay */}
       <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-[30px]">
+        <div className="flex flex-col h-full overflow-y-auto pt-8 pb-10 px-6 sm:px-[30px]">
+          {/* Mobile Menu Logo Header */}
+          <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
+              <img 
+                src="https://bigs.in/lobo.jpeg" 
+                alt="BIGS Logo" 
+                className="h-10 w-auto object-contain rounded-lg"
+              />
+              <div className="flex flex-col">
+                <h1 className="font-black text-xl leading-none text-black uppercase tracking-tighter">BIGS</h1>
+                <p className="text-[8px] font-bold tracking-[0.2em] text-black/50">SUPPORT SERVICES</p>
+              </div>
+            </Link>
+          </div>
+
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000] transition-colors">
+              <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
                 {link.name}
               </Link>
             ))}
@@ -137,7 +152,7 @@ export const Header: React.FC = () => {
             <div className="flex flex-col border-b border-slate-100 pb-4">
               <button 
                 onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
-                className="flex items-center justify-between text-black font-black text-2xl sm:text-3xl uppercase text-left hover:text-[#D30000] transition-colors"
+                className={`flex items-center justify-between font-black text-2xl sm:text-3xl uppercase text-left transition-colors ${location.pathname.startsWith('/services') ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}
               >
                 Services <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isServicesMobileOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -145,7 +160,7 @@ export const Header: React.FC = () => {
               <div className={`grid transition-all duration-300 ease-in-out ${isServicesMobileOpen ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden flex flex-col gap-4 ml-4">
                   {serviceLinks.map((link) => (
-                    <Link key={link.name} to={link.href} className="text-black/60 font-bold text-lg sm:text-xl hover:text-[#D30000] transition-colors">
+                    <Link key={link.name} to={link.href} className={`font-bold text-lg sm:text-xl transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black/60 hover:text-[#D30000]'}`}>
                       {link.name}
                     </Link>
                   ))}
@@ -154,12 +169,12 @@ export const Header: React.FC = () => {
             </div>
 
             {otherLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000] transition-colors">
+              <Link key={link.name} to={link.href} className={`font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 transition-colors ${location.pathname === link.href ? 'text-[#D30000]' : 'text-black hover:text-[#D30000]'}`}>
                 {link.name}
               </Link>
             ))}
             
-            <Link to="/get-quote" className="bg-[#D30000] text-white w-full py-5 mt-6 rounded-md font-black text-center uppercase tracking-widest shadow-xl">
+            <Link to="/get-quote" className="bg-[#D30000] text-white w-full py-5 mt-6 rounded-md font-black text-center uppercase tracking-widest shadow-xl hover:bg-black transition-all">
               Get Quote
             </Link>
           </div>
