@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsServicesMobileOpen(false);
     if (isMenuOpen) {
       document.body.style.overflow = 'auto';
     }
@@ -25,6 +27,9 @@ export const Header: React.FC = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      setIsServicesMobileOpen(false);
+    }
     document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
   };
 
@@ -124,24 +129,32 @@ export const Header: React.FC = () => {
         <div className="flex flex-col h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-[30px]">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000] transition-colors">
                 {link.name}
               </Link>
             ))}
             
-            <div className="py-2">
-              <p className="text-[10px] font-black text-[#D30000] uppercase tracking-[0.2em] mb-4">Our Services</p>
-              <div className="grid grid-cols-1 gap-4 ml-4">
-                {serviceLinks.map((link) => (
-                  <Link key={link.name} to={link.href} className="text-black font-bold text-lg sm:text-xl hover:text-[#D30000]">
-                    {link.name}
-                  </Link>
-                ))}
+            <div className="flex flex-col border-b border-slate-100 pb-4">
+              <button 
+                onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
+                className="flex items-center justify-between text-black font-black text-2xl sm:text-3xl uppercase text-left hover:text-[#D30000] transition-colors"
+              >
+                Services <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isServicesMobileOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`grid transition-all duration-300 ease-in-out ${isServicesMobileOpen ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
+                <div className="overflow-hidden flex flex-col gap-4 ml-4">
+                  {serviceLinks.map((link) => (
+                    <Link key={link.name} to={link.href} className="text-black/60 font-bold text-lg sm:text-xl hover:text-[#D30000] transition-colors">
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
             {otherLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000]">
+              <Link key={link.name} to={link.href} className="text-black font-black text-2xl sm:text-3xl uppercase border-b border-slate-100 pb-4 hover:text-[#D30000] transition-colors">
                 {link.name}
               </Link>
             ))}
